@@ -1,0 +1,7 @@
+.tophalf {
+  position: fixed;
+  top: 0;
+}
+.bottomhalf {
+  background-color: red;
+}

@@ -1,0 +1,7 @@
+nav {
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+}
