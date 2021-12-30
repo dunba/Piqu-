@@ -18,6 +18,7 @@ const CenterHeader = () => {
 
       <div>Good Morning {user.displayName}</div>
       <div>Today is {today}</div>
+
     </div>
   );
 };

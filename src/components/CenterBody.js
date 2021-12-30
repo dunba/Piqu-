@@ -4,6 +4,7 @@ import requestData from "./requestdata";
 import { useState } from "react";
 import RequestPosting from "./RequestPosting";
 
+
 const CenterBody = () => {
   const dailyData = useState(requestData);
   const jsonData = requestData;
@@ -14,7 +15,7 @@ const CenterBody = () => {
   };
   return (
     <div className="requestcontainer">
-      <div> {jsonData ? "Data Present" : "Data Missing"}</div>
+      <div> <button id='requestbutton'>New Request +</button></div>
 
       <div className="requestsholder">
 

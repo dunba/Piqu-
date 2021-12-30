@@ -4,4 +4,11 @@ nav {
   color: white;
   font-weight: bold;
   position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  justify-content: center;
 }
