@@ -17,6 +17,8 @@ const RequestPosting = ({
         className="showpic"
         style={{
           width: "3em",
+          borderRadiusLeft: "10px",
+
           backgroundColor: `#${showColor}`,
           borderradius: "50%",
         }}

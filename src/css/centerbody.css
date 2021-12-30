@@ -80,3 +80,15 @@
 #requesticon {
   color: black;
 }
+
+#requesticon:hover {
+  transform: scale(1.25);
+}
+
+#requesticon_cancel:hover {
+  transform: scale(1.25);
+}
+
+#requesticon_approve:hover {
+  transform: scale(1.25);
+}
