@@ -1,11 +1,14 @@
 import React from 'react'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
 
-const Calendar = () => {
+const CalendarPage = () => {
+    const calendardate = new Date();
     return (
         <div>
-            CALENDAR GOES HERE
+            <Calendar activeStartDate={calendardate} />
         </div>
     )
 }
 
-export default Calendar 
+export default CalendarPage 
