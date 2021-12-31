@@ -13,10 +13,6 @@ function App() {
   return (
     <div className="App">
 
-
-
-
-
       <div id="navbar">
         <Nav />
       </div>

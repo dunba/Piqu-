@@ -4,7 +4,6 @@ import requestData from "./requestdata";
 import { useState } from "react";
 import RequestPosting from "./RequestPosting";
 
-
 const CenterBody = () => {
   const dailyData = useState(requestData);
   const jsonData = requestData;
@@ -15,13 +14,18 @@ const CenterBody = () => {
   };
   return (
     <div className="requestcontainer">
-      <div> <button id='requestbutton'>New Request +</button></div>
+      <div className="requestsheader">
+        <div><input placeholder='Search Piqué' /></div>
+        <div> <button id='requestbutton'>New</button></div>
+      </div>
+
 
       <div className="requestsholder">
 
         <div>
           {jsonData.map(info => (
-            <RequestPosting showColor={info.showColor} shortHed={info.shorthed}
+            <RequestPosting
+              dek={info.dek} started={info.started} flagged={info.flagged} opened={info.opened} showColor={info.showColor} shortHed={info.shorthed}
               show={info.show}
               attachments={info.attachments}
               showAvatar={info.showAvatar}

@@ -6,9 +6,6 @@ import "../css/centerconsole.css";
 const CenterConsole = () => {
   return (
     <div className="centerconsole">
-      CENTER CONSOLE
-      <CenterHeader />
-      <hr />
       <CenterBody />
     </div>
   );
