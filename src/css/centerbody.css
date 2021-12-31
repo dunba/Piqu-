@@ -10,7 +10,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   margin-top: 3em;
-  max-height: 77vh;
+  max-height: 95%;
   bottom: 0;
 }
 .requestsholder::-webkit-scrollbar {
@@ -182,10 +182,14 @@
   transform: scale(1.1);
   cursor: pointer;
 }
+#downloadicon {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 .requestsheader {
   margin: auto;
-  padding: 2em;
+  padding: 1em;
   display: flex;
   flex-direction: row;
 }

@@ -9,8 +9,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState, useEffect, useRef } from "react";
 import Close from "@mui/icons-material/Close";
+import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 
 const RequestPosting = ({
+  mos,
   started,
   flagged,
   opened,
@@ -55,7 +57,7 @@ const RequestPosting = ({
         <div className="requestpopup">
           <div className="popupinfo">
             <div className="requestheader">
-              <div>Requests</div>
+              <div>REQUEST</div>
               <div onClick={handleRequest}>
                 <CloseIcon id="closeicon" />
               </div>
@@ -79,9 +81,20 @@ const RequestPosting = ({
               <br />
               {attachments ? (
                 <p>
-                  <b>Attachments:</b>
+                  <b>Attachments</b>
                   <br />
-                  {attachments}
+                  <a href="">{attachments}</a>{" "}
+                  <CloudDownloadIcon id="downloadicon" />
+                </p>
+              ) : (
+                ""
+              )}
+              <br />
+              {mos ? (
+                <p>
+                  <b>MOS</b>
+                  <br />
+                  {mos}
                 </p>
               ) : (
                 ""
