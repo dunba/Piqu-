@@ -24,3 +24,22 @@
   text-align: start;
   padding: 0 4em;
 }
+
+#hedtextarea {
+  width: 25em;
+  height: 5em;
+  resize: none;
+  padding: 0.5em;
+}
+#dektextarea {
+  width: 25em;
+  height: 10em;
+  resize: none;
+  padding: 0.5em;
+}
+
+.submitdiv {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}

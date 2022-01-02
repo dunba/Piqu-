@@ -53,7 +53,7 @@ const CenterBody = () => {
           </select>
         </div>
         <div>
-          <input ref={searchquery} placeholder="Search Piqué" />
+          <input ref={searchquery} placeholder="Search Piqué" type='search' />
         </div>
         <div>
 
