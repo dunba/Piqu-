@@ -12,6 +12,7 @@ import Close from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 
 const RequestPosting = ({
+  deadline,
   mos,
   started,
   flagged,
@@ -130,7 +131,7 @@ const RequestPosting = ({
         </p>
         <hr />
         <div className="timeanddate">
-          <div>{timeanddate}</div>
+          <div>Due: {deadline.toDateString()}</div>
           <div className="badges">
             <p>{flagged ? <FlagIcon id="badgeicon" /> : ""}</p>
             {started ? <LockOutlinedIcon id="badgeicon" /> : ""}

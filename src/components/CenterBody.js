@@ -4,7 +4,7 @@ import requestData from "./requestdata";
 import { useState, useRef } from "react";
 import RequestPosting from "./RequestPosting";
 import NewRequest from "./NewRequest";
-
+import SearchIcon from '@mui/icons-material/Search';
 const CenterBody = () => {
   const dailyData = useState(requestData);
   const jsonData = requestData;
@@ -57,31 +57,30 @@ const CenterBody = () => {
         </div>
         <div>
 
-          <button onClick={handleSearch}>Submit</button>
+          <SearchIcon onClick={handleSearch} />
         </div>
       </div>
       <div className="buttondiv"><button onClick={handleNewRequest} id='requestbutton'>New</button></div>
       {isNewRequestMade ? <NewRequest handleNewRequest={handleNewRequest} onClick={handleNewRequest} /> : ''}
 
       <div className="requestsholder">
-        <div>
-          {jsonData.map(info => (
-            <RequestPosting
-              ref={top}
-              mos={info.mos}
-              dek={info.dek}
-              started={info.started}
-              flagged={info.flagged}
-              opened={info.opened}
-              showColor={info.showColor}
-              shortHed={info.shorthed}
-              show={info.show}
-              attachments={info.attachments}
-              showAvatar={info.showAvatar}
-              hed={info.hed}
-            />
-          ))}
-        </div>
+        {jsonData.map(info => (
+          <RequestPosting
+            deadline={info.deadline}
+            ref={top}
+            mos={info.mos}
+            dek={info.dek}
+            started={info.started}
+            flagged={info.flagged}
+            opened={info.opened}
+            showColor={info.showColor}
+            shortHed={info.shorthed}
+            show={info.show}
+            attachments={info.attachments}
+            showAvatar={info.showAvatar}
+            hed={info.hed}
+          />
+        ))}
       </div>
     </div>
   );
