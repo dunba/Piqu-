@@ -29,6 +29,13 @@
   overflow: hidden;
   max-height: 100vh;
   height: 100vh;
-  overflow: none;
+  overflow: scroll;
   display: block;
+}
+
+#centerconsole::-webkit-scrollbar {
+  width: 50em;
+}
+#centerconsole::-webkit-scrollbar {
+  width: 10px;
 }

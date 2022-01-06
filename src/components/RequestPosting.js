@@ -90,6 +90,7 @@ const RequestPosting = ({
               ) : (
                 ""
               )}
+
               <br />
               {mos ? (
                 <p>
@@ -101,11 +102,17 @@ const RequestPosting = ({
                 ""
               )}
             </div>
+            <br />
+            <div className="submitdiv">
+              {" "}
+              <button>Take</button>
+            </div>
           </div>
         </div>
       ) : (
         ""
       )}
+
       <div
         className="showpic"
         style={{

@@ -5,22 +5,33 @@ import { useState, useRef } from "react";
 import RequestPosting from "./RequestPosting";
 import NewRequest from "./NewRequest";
 import SearchIcon from '@mui/icons-material/Search';
+import Select from 'react-select'
+import showList from "./showList";
 const CenterBody = () => {
+
   const dailyData = useState(requestData);
-  const jsonData = requestData;
+  const [jsonData, setJsonData] = useState(requestData);
+
+  // this filters the show by name
+  const filterShows = (value) => {
+    console.log(value)
+    let tester = dailyData.filter(request => request.show.toLowerCase().includes(value.toLowerCase()));
+    console.log(tester)
+    setJsonData(dailyData.filter(request => request.show.toLowerCase().includes(value.toLowerCase())));
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log(jsonData);
   };
   const searchquery = useRef();
-  const filter = useRef();
+  const filterRef = useRef();
   const top = useRef();
   const handleSearch = e => {
     e.preventDefault();
     console.log("submit");
     console.log(searchquery.current.value);
-    console.log(filter.current.value);
+    console.log(filterRef.current.value);
   };
 
   const [isNewRequestMade, setIsNewRequestMade] = useState(false);
@@ -44,13 +55,8 @@ const CenterBody = () => {
     <div className="requestcontainer">
       <div className="requestsheader">
         <div>
-          <select ref={filter} name="filter" id="filterdropdown">
-            <option>All</option>
-            <option>Red and Blue</option>
-            <option>CBS Mornings</option>
-            <option>CBS Evening News</option>
-            <option>The Takeout</option>
-          </select>
+          <Select onChange={(val) => filterShows(val.value)} ref={filterRef} placeholder={'Filter'} options={showList} />
+
         </div>
         <div>
           <input ref={searchquery} placeholder="Search Piqué" type='search' />

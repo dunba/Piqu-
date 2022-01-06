@@ -1,7 +1,7 @@
 import React from "react";
 import { useInRouterContext } from "react-router-dom";
 import '../css/centerheader.css'
-const CenterHeader = () => {
+const RightSideHeader = () => {
   const date = new Date();
   const today = date.toDateString();
   const user = {
@@ -23,4 +23,4 @@ const CenterHeader = () => {
   );
 };
 
-export default CenterHeader;
+export default RightSideHeader;

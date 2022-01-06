@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 const NewRequest = ({ handleNewRequest }) => {
+  const mosRef = useRef();
   const showName = useRef();
   const hedRef = useRef();
   const shortHedRef = useRef();
@@ -58,13 +59,20 @@ const NewRequest = ({ handleNewRequest }) => {
             <br />
             <textarea id="dektextarea" ref={dekRef} />
             <br />
+            <b>MOS</b>
+            <br />
+            <input type="text" ref={mosRef} />
+            <br />
             <b>Deadline</b>
             <br />
 
             <input type="date" ref={deadlineRef} />
             <br />
+
+
             <b>Attachment</b>
             <br />
+
             <input type="file" ref={fileRef} />
             <br />
             <div className="submitdiv">
