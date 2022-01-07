@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import requestData from "./requestdata";
 import { useState } from "react";
+import "../css/calendar.css";
 
 const CalendarPage = () => {
   let calendardate = new Date();
@@ -20,6 +21,7 @@ const CalendarPage = () => {
   return (
     <div>
       <Calendar
+        id="calendar"
         onClickDay={value => setToDoDate(value)}
         activeStartDate={todoDate}
       />

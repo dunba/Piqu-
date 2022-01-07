@@ -1,0 +1,32 @@
+.showlisting {
+  margin: 1em;
+  background-color: #f8f8f8;
+  border: solid #bdbdbd 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+}
+
+.showlisting:hover {
+  cursor: pointer;
+}
+
+.listingcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+.navbottom {
+  position: absolute;
+  padding: 1em;
+  bottom: 0;
+  display: flex;
+  margin: auto;
+}
+
+.rightconsole {
+  display: flex;
+  flex-direction: column;
+}

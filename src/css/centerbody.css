@@ -34,11 +34,12 @@
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   border: solid #bdbdbd 0;
-  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
   margin: 3em auto;
   width: 85%;
 }
