@@ -12,6 +12,7 @@ import Close from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 
 const RequestPosting = ({
+  type,
   deadline,
   mos,
   started,
@@ -103,6 +104,10 @@ const RequestPosting = ({
               )}
             </div>
             <br />
+            <div className="informationsection"><div> Requested by: </div>
+
+              <div ><img id='profilepic' src='https://thispersondoesnotexist.com/image' /> FirstName Last Name</div>
+            </div>
             <div className="submitdiv">
               {" "}
               <button>Take</button>
@@ -126,7 +131,7 @@ const RequestPosting = ({
       </div>
       <div className="showtitleandhed" onClick={handleRequest}>
         <p>
-          <b>SHOW:</b> {show}
+          <b>Request Type:</b> {type}
         </p>
         <p>
           <b>HED: </b>

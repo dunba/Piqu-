@@ -201,4 +201,10 @@
   border: 0.1em solid rgb(223, 223, 223);
   border-radius: 5px;
   padding: 1em;
+  margin: 1em;
+}
+
+#profilepic {
+  width: 2em;
+  border-radius: 50%;
 }

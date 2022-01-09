@@ -53,25 +53,23 @@ const CenterBody = () => {
   }
   return (
     <div className="requestcontainer">
-      <div className="requestsheader">
-        <div>
-          <Select onChange={(val) => filterShows(val.value)} ref={filterRef} placeholder={'Filter'} options={showList} />
+      <div className="requestheader">
 
-        </div>
-        <div>
-          <input ref={searchquery} placeholder="Search Piqué" type='search' />
-        </div>
-        <div>
+        <Select onChange={(val) => filterShows(val.value)} ref={filterRef} placeholder={'Filter'} options={showList} />
 
-          <SearchIcon onClick={handleSearch} />
+        <div>
+          <input ref={searchquery} placeholder="Search Piqué" type='search' />  <SearchIcon onClick={handleSearch} />
         </div>
+
       </div>
       <div className="buttondiv"><button onClick={handleNewRequest} id='requestbutton'>New</button></div>
+
       {isNewRequestMade ? <NewRequest handleNewRequest={handleNewRequest} onClick={handleNewRequest} /> : ''}
 
       <div className="requestsholder">
         {jsonData.map(info => (
           <RequestPosting
+            type={info.type}
             deadline={info.deadline}
             ref={top}
             mos={info.mos}

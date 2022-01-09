@@ -5,6 +5,7 @@ const tomorrow = sameDay.setDate(sameDay.getTime() + (24 * 60 * 60 * 1000));
 
 const requestData = [
     {
+        type: 'Upload',
         deadline: fullDate,
         opened: false,
         attachments: null,
@@ -18,7 +19,7 @@ const requestData = [
         showColor: "FF6666",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB400",
+        linkdata: "XX2XBBB400",
         senderName: "Paul Kim",
         senderID: 123456,
         show: "Red and Blue",
@@ -27,7 +28,8 @@ const requestData = [
         dek: "There are growing questions about a change to the CDC’s COVID isolation guidelines, as Omicron drives record case numbers. Also, tributes are pouring in for former Senate Majority Leader Harry Reid, who died at 82 Tuesday, and for legendary football coach and broadcaster John Madden, who died Tuesday at 85. All that and all that matters in today’s Eye Opener."
     },
     {
-        deadline: sameDay,
+        type: 'Upload',
+        deadline: fullDate,
         opened: false,
         attachments: null,
         postID: 2,
@@ -40,7 +42,7 @@ const requestData = [
         showColor: "FFFF99",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "X1XXBBB402",
         senderName: "Amalia Nunez",
         senderID: 123453,
         show: "CBS Mornings",
@@ -49,7 +51,8 @@ const requestData = [
         dek: "CDC Director Dr. Rochelle Walensky joins \"CBS Mornings\" to discuss why the agency issued new COVID-19 isolation and quarantine guidelines."
     },
     {
-        deadline: sameDay,
+        type: 'Upload',
+        deadline: fullDate,
         opened: false,
         attachments: '1229_SatMO_XDSZ123MO.mov',
         timesubmitted: null,
@@ -61,7 +64,7 @@ const requestData = [
         showColor: "CCFF99",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "XXXB2BB402",
         senderName: "Thomas Hoernberger",
         senderID: 123253,
         show: "CBS Saturday Morning",
@@ -70,7 +73,8 @@ const requestData = [
         dek: "Mastercard SpendingPulse found that holiday retail sales were up 8.5% in 2021. Meanwhile, the cost of essentials like food and energy continue to rise due to inflation. Business Insider senior reporter Áine Cain joins CBSN's Elise Preston to explain."
     },
     {
-        deadline: sameDay,
+        type: 'Upload',
+        deadline: fullDate,
         opened: false,
         attachments: null,
         timesubmitted: null,
@@ -82,7 +86,7 @@ const requestData = [
         showColor: "99CCFF",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "4XXXBBB402",
         senderName: "Jordan Freiman",
         senderID: 113253,
         show: "CBS Evening News",
@@ -91,6 +95,7 @@ const requestData = [
         dek: "The parents of the 14-year-old girl killed in a clothing store dressing room by a Los Angeles Police officer's stray bullet called for justice one day after police released video of the chaotic moments leading to the fatal shooting. Jonathan Vigliotti has the details."
     },
     {
+        type: 'Upload',
         deadline: fullDate,
         opened: true,
         attachments: null,
@@ -104,7 +109,7 @@ const requestData = [
         showColor: "FF6666",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB400",
+        linkdata: "XXXBB5B400",
         senderName: "Paul Kim",
         senderID: 123456,
         show: "Red and Blue",
@@ -113,6 +118,7 @@ const requestData = [
         dek: "There are growing questions about a change to the CDC’s COVID isolation guidelines, as Omicron drives record case numbers. Also, tributes are pouring in for former Senate Majority Leader Harry Reid, who died at 82 Tuesday, and for legendary football coach and broadcaster John Madden, who died Tuesday at 85. All that and all that matters in today’s Eye Opener."
     },
     {
+        type: 'Upload',
         deadline: fullDate,
         flagged: true,
         opened: true,
@@ -127,7 +133,7 @@ const requestData = [
         showColor: "FFFF99",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "XXX6BBB402",
         senderName: "Amalia Nunez",
         senderID: 123453,
         show: "CBS Mornings",
@@ -136,7 +142,8 @@ const requestData = [
         dek: "CDC Director Dr. Rochelle Walensky joins \"CBS Mornings\" to discuss why the agency issued new COVID-19 isolation and quarantine guidelines."
     },
     {
-        deadline: sameDay,
+        type: 'Upload',
+        deadline: fullDate,
         opened: true,
         attachments: null,
         timesubmitted: null,
@@ -148,7 +155,7 @@ const requestData = [
         showColor: "CCFF99",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "XXXBB7B402",
         senderName: "Thomas Hoernberger",
         senderID: 123253,
         show: "CBS Saturday Morning",
@@ -157,6 +164,7 @@ const requestData = [
         dek: "Mastercard SpendingPulse found that holiday retail sales were up 8.5% in 2021. Meanwhile, the cost of essentials like food and energy continue to rise due to inflation. Business Insider senior reporter Áine Cain joins CBSN's Elise Preston to explain."
     },
     {
+        type: 'Upload',
         deadline: fullDate,
         flagged: true,
         opened: true,
@@ -170,7 +178,7 @@ const requestData = [
         showColor: "99CCFF",
         thumbnail: null,
         url: null,
-        linkdata: "XXXBBB402",
+        linkdata: "XXXBB8B402",
         senderName: "Jordan Freiman",
         senderID: 113253,
         show: "CBS Evening News",

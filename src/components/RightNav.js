@@ -7,8 +7,6 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 const RightNav = () => {
     return (
         <div className='rightnav'>
-            <MailIcon />
-            <GroupIcon />
             <Inventory2Icon />
             <AssignmentTurnedInIcon />
         </div>

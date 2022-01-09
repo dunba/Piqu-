@@ -3,12 +3,12 @@ import showList from "./showList";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
-
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 const ShowLineup = () => {
   let airingList = showList.filter(show => show.airingtoday).sort();
   return (
     <div>
-      <b>Shows Airing Today</b>
+      <b>On Air Today</b><FiberManualRecordIcon className="blinking" />
       <div className="listingcontainer">
         {airingList.map((show, key) => (
           <div className="showlisting">

@@ -31,6 +31,12 @@
   resize: none;
   padding: 0.5em;
 }
+#shorthedtextarea {
+  width: 25em;
+  height: 2em;
+  resize: none;
+  padding: 0.5em;
+}
 #dektextarea {
   width: 25em;
   height: 10em;
@@ -42,4 +48,14 @@
   display: flex;
   margin: auto;
   justify-content: center;
+}
+
+.radioSelects {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em 0;
+}
+
+.radiosection {
+  margin: 0 1em;
 }

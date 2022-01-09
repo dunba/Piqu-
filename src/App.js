@@ -4,25 +4,36 @@ import Nav from "./components/nav";
 import Home from "./components/home";
 import Portal from "./components/portal";
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
 
 function App() {
   return (
+
+
+
     <div className="App">
+
 
       <div id="navbar">
         <Nav />
       </div>
+
+
+
 
       <div id="homepage">
         <Home />
       </div>
 
 
+
     </div>
+
+
+
   );
 }
 
