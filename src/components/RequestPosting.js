@@ -10,7 +10,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState, useEffect, useRef } from "react";
 import Close from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 const RequestPosting = ({
   type,
   deadline,
@@ -121,7 +121,7 @@ const RequestPosting = ({
       <div
         className="showpic"
         style={{
-          width: "3em",
+          width: "1em",
 
           backgroundColor: `#${showColor}`,
         }}
@@ -145,9 +145,6 @@ const RequestPosting = ({
         <div className="timeanddate">
           <div>Due: {deadline.toDateString()}</div>
           <div className="badges">
-            <p>{flagged ? <FlagIcon id="badgeicon" /> : ""}</p>
-            {started ? <LockOutlinedIcon id="badgeicon" /> : ""}
-            {!opened ? <b id="badgeicon">NEW</b> : ""}
           </div>
         </div>
         {/* <hr />

@@ -128,6 +128,16 @@
   flex-direction: row;
   justify-content: space-between;
 }
+#badgeicon {
+  background-color: greenyellow;
+  border-radius: 50%;
+  width: 3em;
+}
+#openedicon {
+  color: greenyellow;
+  border-radius: 50%;
+  transform: scale(0.8);
+}
 
 #badgeicon:hover {
   transform: scale(1.2);
@@ -207,4 +217,5 @@
 #profilepic {
   width: 2em;
   border-radius: 50%;
+  border: 5px solid green;
 }
