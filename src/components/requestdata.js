@@ -5,6 +5,15 @@ const tomorrow = sameDay.setDate(sameDay.getTime() + (24 * 60 * 60 * 1000));
 
 const requestData = [
     {
+        type: 'Takedown',
+        url: 'https://www.cbsnews.com/video/thousands-of-schools-nationwide-get-creative-to-keep-kids-safe-in-class-despite-latest-covid-surge/',
+        deadline: fullDate,
+        senderName: "Caitlyn Yilek",
+        senderID: 123456,
+        show: "CBS Mornings",
+
+    },
+    {
         type: 'Upload',
         deadline: fullDate,
         opened: false,
@@ -16,7 +25,6 @@ const requestData = [
         receiverName: null,
         receiverID: null,
         mos: 'XDF123MSA',
-        showColor: "FF6666",
         thumbnail: null,
         url: null,
         linkdata: "XX2XBBB400",
@@ -61,7 +69,6 @@ const requestData = [
         receiverName: null,
         receiverID: null,
         mos: null,
-        showColor: "CCFF99",
         thumbnail: null,
         url: null,
         linkdata: "XXXB2BB402",
@@ -83,7 +90,6 @@ const requestData = [
         receiverName: null,
         receiverID: null,
         mos: null,
-        showColor: "99CCFF",
         thumbnail: null,
         url: null,
         linkdata: "4XXXBBB402",
@@ -185,6 +191,7 @@ const requestData = [
         hed: "Family seeks justice after LAPD shooting",
         shorthed: "Family seeks justice after LAPD shooting",
         dek: "The parents of the 14-year-old girl killed in a clothing store dressing room by a Los Angeles Police officer's stray bullet called for justice one day after police released video of the chaotic moments leading to the fatal shooting. Jonathan Vigliotti has the details."
-    }
+    },
+
 ]
 export default requestData

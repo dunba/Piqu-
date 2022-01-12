@@ -49,6 +49,14 @@
   cursor: pointer;
 }
 
+.postingheader {
+  display: flex;
+  flex-direction: row;
+}
+.timeandname {
+  display: flex;
+  flex-direction: row;
+}
 .showtitleandhed {
   text-align: start;
 

@@ -12,7 +12,7 @@ const Nav = () => {
       <nav>
         <ul>
           <li><HomeIcon /></li>
-          <li><AccessTimeIcon /></li>
+          {/* <li><AccessTimeIcon /></li> */}
           <li><MailIcon /></li>
           <li><GroupIcon /></li>
         </ul>

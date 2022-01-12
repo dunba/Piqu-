@@ -55,7 +55,7 @@ const CenterBody = () => {
     <div className="requestcontainer">
       <div className="requestheader">
 
-        <Select onChange={(val) => filterShows(val.value)} ref={filterRef} placeholder={'Filter'} options={showList} />
+        <Select ref={filterRef} placeholder={'Filter'} options={showList} />
 
         <div>
           <input ref={searchquery} placeholder="Search Piqué" type='search' />  <SearchIcon onClick={handleSearch} />
@@ -69,6 +69,8 @@ const CenterBody = () => {
       <div className="requestsholder">
         {jsonData.map(info => (
           <RequestPosting
+            url={info.url}
+            senderName={info.senderName}
             type={info.type}
             deadline={info.deadline}
             ref={top}

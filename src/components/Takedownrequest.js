@@ -10,7 +10,6 @@ const Takedownrequest = () => {
                 <b>Show:</b>
                 <br />
                 <Select placeholder={'Filter'} options={showList} />
-
                 <br />
                 <b>Url</b>
                 <br />

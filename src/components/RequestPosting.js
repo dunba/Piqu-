@@ -10,8 +10,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState, useEffect, useRef } from "react";
 import Close from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ReadUpload from "./ReadUpload";
+import Readtakedown from "./Readtakedown";
 const RequestPosting = ({
+  url,
+  senderName,
   type,
   deadline,
   mos,
@@ -50,7 +55,10 @@ const RequestPosting = ({
     }
   };
 
-  // this returns the component of a request that has been read/opened by an AVP.
+  let takedownColor = "FF6666";
+  let uploadColor = "CCFF99";
+  let RequestColor = "99CCFF";
+
   return (
     // this div below is the requestpopup
     <div className="openedrequest">
@@ -104,9 +112,16 @@ const RequestPosting = ({
               )}
             </div>
             <br />
-            <div className="informationsection"><div> Requested by: </div>
+            <div className="informationsection">
+              <div> Requested by: </div>
 
-              <div ><img id='profilepic' src='https://thispersondoesnotexist.com/image' /> FirstName Last Name</div>
+              <div>
+                <img
+                  id="profilepic"
+                  src="https://thispersondoesnotexist.com/image"
+                />{" "}
+                {senderName}
+              </div>
             </div>
             <div className="submitdiv">
               {" "}
@@ -117,47 +132,34 @@ const RequestPosting = ({
       ) : (
         ""
       )}
+      {/* end of request popup */}
 
-      <div
-        className="showpic"
-        style={{
-          width: "1em",
+      {type === "Upload" ? (
+        <ReadUpload
+          handleRequest={handleRequest}
+          uploadColor={uploadColor}
+          type={type}
+          senderName={senderName}
+          hed={hed}
+          shortHed={shortHed}
+          deadline={deadline}
+        />
+      ) : (
+        ""
+      )}
+      {type === "Takedown" ? (
+        <Readtakedown
+          handleRequest={handleRequest}
+          takedownColor={takedownColor}
+          type={type}
+          senderName={senderName}
+          url={url}
+          deadline={deadline}
+        />
+      ) : (
+        ""
+      )}
 
-          backgroundColor: `#${showColor}`,
-        }}
-      >
-        {" "}
-        {attachments ? <AttachFileIcon /> : ""}
-      </div>
-      <div className="showtitleandhed" onClick={handleRequest}>
-        <p>
-          <b>Request Type:</b> {type}
-        </p>
-        <p>
-          <b>HED: </b>
-          {hed}
-        </p>
-        <p>
-          <b>SHORT HED: </b>
-          {shortHed}
-        </p>
-        <hr />
-        <div className="timeanddate">
-          <div>Due: {deadline.toDateString()}</div>
-          <div className="badges">
-          </div>
-        </div>
-        {/* <hr />
-          <div className="requestfooter">
-            <div>
-
-            </div>
-
-            <div>
-              <b>{Math.floor(Math.random() * 10) + 1} mins ago</b>
-            </div> */}
-        {/* </div> */}
-      </div>
       <div className="verticonholder">
         <MoreVertIcon id="verticon" onClick={handleVert} />
         {isVertClicked ? (
@@ -173,7 +175,5 @@ const RequestPosting = ({
     </div>
   );
 };
-
-// this returns the component of a request that has NOT been read/opened by an AVP.
 
 export default RequestPosting;

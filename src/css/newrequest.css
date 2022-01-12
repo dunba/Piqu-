@@ -27,7 +27,7 @@
 
 #hedtextarea {
   width: 25em;
-  height: 5em;
+  height: 3em;
   resize: none;
   padding: 0.5em;
 }
@@ -39,7 +39,7 @@
 }
 #dektextarea {
   width: 25em;
-  height: 10em;
+  height: 5em;
   resize: none;
   padding: 0.5em;
 }
