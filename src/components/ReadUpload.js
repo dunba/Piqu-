@@ -9,13 +9,12 @@ const ReadUpload = ({ handleRequest, uploadColor, type, senderName, hed, shortHe
                         width: "2em",
                         borderRadius: "50%",
                         height: "2em",
-
                         backgroundColor: `#${uploadColor}`,
                     }}
                 />
 
                 <div>
-                    <b>New {type} Request </b>
+                    <p>New {type} Request </p>
                     <div className="timeandname">
                         <p>{senderName}</p>•<p>2 h</p>
                     </div>

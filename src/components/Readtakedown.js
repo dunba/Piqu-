@@ -15,7 +15,7 @@ const Readtakedown = ({ handleRequest, takedownColor, type, senderName, url, dea
                 />
 
                 <div>
-                    <b>New {type} Request </b>
+                    <p>New {type} Request </p>
                     <div className="timeandname">
                         <p>{senderName}</p>•<p>2 h</p>
                     </div>
