@@ -13,7 +13,6 @@ const RightConsole = () => {
       <Teamannouncements />
       <ShowLineup />
 
-      <ArchivedRequests />
 
       <Whosonline />
 
