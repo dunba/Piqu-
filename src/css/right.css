@@ -1,23 +1,24 @@
 .showlisting {
   display: flex;
-  flex-direction: row;
-  margin: 1em;
-  background-color: #f8f8f8;
-  border: solid #bdbdbd 0;
-  box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  width: 100%;
 }
 
 .showlisting:hover {
   cursor: pointer;
 }
 
+.onairsection {
+  background: rgb(216, 216, 216);
+  width: 50%;
+  margin: 0.5em auto;
+  border-radius: 20px;
+}
+
 .listingcontainer {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin: auto;
+  width: 100%;
 }
 .navbottom {
   position: absolute;

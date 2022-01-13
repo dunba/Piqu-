@@ -16,7 +16,7 @@ const ReadUpload = ({ handleRequest, uploadColor, type, senderName, hed, shortHe
                 <div>
                     <p>New {type} Request </p>
                     <div className="timeandname">
-                        <p>{senderName}</p>•<p>2 h</p>
+                        <a>{senderName}</a>•<p>2 h</p>
                     </div>
                 </div>
             </div>

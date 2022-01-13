@@ -14,7 +14,7 @@ const ShowLineup = () => {
     !isClipsOpen ? setIsClipsOpen(true) : setIsClipsOpen(false);
   }
   return (
-    <div>
+    <div className="onairsection">
       <b>On Air Today</b><FiberManualRecordIcon className="blinking" />
       <div className="listingcontainer" >
         {airingList.map((show, key) => (
@@ -23,10 +23,11 @@ const ShowLineup = () => {
             {isClipsOpen ? <ShowClips show={show} handleShowClips={handleShowClips} /> : ''}
 
             <div className="showlisting" onClick={handleShowClips}>
-              <h5 > {show.value}</h5>
+              <div>{show.type}.{show.airtime} hours ago</div>
+              <div> <h5 > {show.value}</h5></div>
 
-              {show.complete ? <CheckCircleIcon /> : <CancelIcon />}
-              <p>{show.airtime}pm</p>
+
+
             </div>
           </div>
         ))}

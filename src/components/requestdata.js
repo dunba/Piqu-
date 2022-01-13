@@ -6,6 +6,33 @@ const tomorrow = sameDay.setDate(sameDay.getTime() + (24 * 60 * 60 * 1000));
 const requestData = [
     {
         type: 'Takedown',
+        url: 'https://www.cbsnews.com/video/preview-indivisible-healing-hate/#x',
+        deadline: fullDate,
+        senderName: "Joshua Kleinman",
+        senderID: 123456,
+        show: "Special",
+
+    },
+    {
+        type: 'Takedown',
+        url: 'https://www.cbsnews.com/video/apple-airtags-spark-safety-and-privacy-concerns/#x',
+        deadline: fullDate,
+        senderName: "Alex Sundby",
+        senderID: 123456,
+        show: "CBSN",
+
+    },
+    {
+        type: 'Takedown',
+        url: 'https://www.cbsnews.com/video/country-on-high-alert-one-month-before-winter-olympics/',
+        deadline: fullDate,
+        senderName: "Amy Gardner",
+        senderID: 123456,
+        show: "CBS Mornings",
+
+    },
+    {
+        type: 'Takedown',
         url: 'https://www.cbsnews.com/video/thousands-of-schools-nationwide-get-creative-to-keep-kids-safe-in-class-despite-latest-covid-surge/',
         deadline: fullDate,
         senderName: "Caitlyn Yilek",
