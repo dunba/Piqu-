@@ -15,16 +15,23 @@ const ShowLineup = () => {
   }
   return (
     <div className="onairsection">
-      <b>On Air Today</b><FiberManualRecordIcon className="blinking" />
+
       <div className="listingcontainer" >
+        <b id='onairtoday'>On Air Today <FiberManualRecordIcon className="blinking" /></b>
         {airingList.map((show, key) => (
 
+
           <div >
+
             {isClipsOpen ? <ShowClips show={show} handleShowClips={handleShowClips} /> : ''}
 
             <div className="showlisting" onClick={handleShowClips}>
-              <div>{show.type}.{show.airtime} hours ago</div>
-              <div> <h5 > {show.value}</h5></div>
+              <div className="dailyshow">
+                <p id='topdaily'>{show.type}.{show.airtime} hours ago</p>
+                <p id='bottomdaily'> {show.value}</p>
+                <p id='showchannel'>Channel: {show.channel}</p>
+              </div>
+
 
 
 

@@ -11,8 +11,11 @@ const Teamannouncements = () => {
                     {/* {isClipsOpen ? <ShowClips show={show} handleShowClips={handleShowClips} /> : ''} */}
 
                     <div className="showlisting" >
-                        <div>Announcement</div>
-                        <div> <h5 > Today's Date</h5></div>
+                        <div>Date Change</div>
+                        <div>Date Change</div>
+                        <div>Date Change</div>
+                        <div>Date Change</div>
+
 
 
 

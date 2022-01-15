@@ -21,11 +21,14 @@
   width: 100%;
 }
 .navbottom {
-  position: absolute;
-  padding: 1em;
-  bottom: 0;
   display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+
   margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .rightconsole {
@@ -48,6 +51,48 @@
   }
 }
 
-#pfp {
-  width: 0.2em;
+#onlineavi {
+  width: 3em;
+  margin: 0;
+}
+#onlineavi:hover {
+  cursor: pointer;
+}
+#onlinename {
+  margin: 0;
+}
+.onlineholder {
+  width: 5em;
+  display: flex;
+  flex-direction: column;
+}
+.avatarholders {
+  display: flex;
+  flex-direction: row;
+}
+.dailyshow {
+  text-align: left;
+  padding: 1em 1.2em;
+}
+.dailyshow:hover {
+  background: rgb(235, 234, 234);
+}
+#topdaily {
+  margin: 0;
+  font-size: 14px;
+}
+
+#bottomdaily {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+#showchannel {
+  margin: 0;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+#onairtoday {
+  padding: 0.5em 0;
 }
