@@ -19,26 +19,34 @@ const CalendarPage = () => {
   console.log(requestData);
   console.log(dueRequests);
   return (
-    <div>
-      <Calendar
-        id="bigcalendar"
-        onClickDay={value => setToDoDate(value)}
-        activeStartDate={todoDate}
-      />
+    <div className='calendardiv' >
       <div>
+        <Calendar
+          id="bigcalendar"
+          onClickDay={value => setToDoDate(value)}
+          activeStartDate={todoDate}
+        />
+      </div>
+      <br />
+      <div>
+
         Due{" "}
         {datesAreOnSameDay(calendardate, todoDate)
           ? "Today"
-          : `on ${todoDate.toDateString()} `}
+          : `on ${todoDate.toDateString()} `} ({dueRequests.length})
       </div>
-      {dueRequests.map(request => (
-        <ul>
-          <li key={`${request.linkdata}${request.postID}`}>
-            {request.shorthed}
-          </li>
-        </ul>
-      ))}
-    </div>
+      <div className="duelist">
+        {dueRequests.map(request => (
+          <ul>
+            <li key={`${request.linkdata}${request.postID}`}>
+              {request.shorthed}
+            </li>
+          </ul>
+        ))}
+
+      </div>
+
+    </div >
   );
 };
 

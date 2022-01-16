@@ -1,8 +1,9 @@
+import cbsUsersList from "./users/userlist";
+
 let fullDate = new Date()
 let sameDay = new Date(fullDate)
 const yesterday = sameDay.setDate(sameDay.getTime() - (24 * 60 * 60 * 1000));
 const tomorrow = sameDay.setDate(sameDay.getTime() + (24 * 60 * 60 * 1000));
-import cbsUsersList from "./users/userlist";
 
 const requestData = [
     {
@@ -13,7 +14,8 @@ const requestData = [
         senderPic: cbsUsersList[0].avi,
         senderID: 123456,
         show: "Special",
-        showid: 'specials'
+        showid: 'specials',
+        rqid: 'takedownreq1'
 
 
     },
@@ -25,7 +27,10 @@ const requestData = [
         senderPic: cbsUsersList[1].avi,
         senderID: 123456,
         show: "CBSN",
-        showid: 'cbsn'
+        showid: 'cbsn',
+        rqid: 'takedownreq2'
+
+
 
     },
     {
@@ -36,7 +41,9 @@ const requestData = [
         senderPic: cbsUsersList[2].avi,
         senderID: 123456,
         show: "CBS Mornings",
-        showid: 'cbsmornings'
+        showid: 'cbsmornings',
+        rqid: 'takedownreq3'
+
 
     },
     {
@@ -47,7 +54,9 @@ const requestData = [
         senderPic: cbsUsersList[1].avi,
         senderID: 123456,
         show: "CBS Mornings",
-        showid: 'cbsmornings'
+        showid: 'cbsmornings',
+        rqid: 'takedownreq4'
+
 
 
     },
@@ -69,6 +78,7 @@ const requestData = [
         senderName: cbsUsersList[3].name,
         senderPic: cbsUsersList[3].avi,
         showid: 'redandblue',
+        rqid: 'uploadreq1',
 
         senderID: 123456,
         show: "Red and Blue",
@@ -96,7 +106,7 @@ const requestData = [
         senderPic: cbsUsersList[4].avi,
         senderID: 123453,
         showid: 'cbsmornings',
-
+        rqid: 'uploadreq2',
         show: "CBS Mornings",
         hed: "Dr. Walensky on CDC's new COVID guidelines",
         shorthed: "Dr. Walensky on CDC's new COVID guidelines",
@@ -120,6 +130,7 @@ const requestData = [
         senderName: cbsUsersList[5].name,
         senderPic: cbsUsersList[5].avi,
         senderID: 123253,
+        rqid: 'uploadreq3',
         show: "CBS Saturday Morning",
         hed: "Holiday shopping increased despite inflation",
         shorthed: "Holiday shopping increased despite inflation",
@@ -142,7 +153,7 @@ const requestData = [
         senderName: cbsUsersList[6].name,
         senderPic: cbsUsersList[6].avi,
         showid: 'cbseveningnews',
-
+        rqid: 'uploadreq4',
         senderID: 113253,
         show: "CBS Evening News",
         hed: "Family seeks justice after LAPD shooting",
@@ -167,6 +178,7 @@ const requestData = [
         linkdata: "XXXBB5B400",
         senderName: cbsUsersList[7].name,
         senderPic: cbsUsersList[7].avi,
+        rqid: 'uploadreq5',
         senderID: 123456,
         showid: 'redandblue',
         show: "Red and Blue",
@@ -193,6 +205,7 @@ const requestData = [
         linkdata: "XXX6BBB402",
         senderName: cbsUsersList[8].name,
         senderPic: cbsUsersList[8].avi,
+        rqid: 'uploadreq6',
         senderID: 123453,
         show: "CBS Mornings",
         showid: 'cbsmornings',
@@ -217,6 +230,7 @@ const requestData = [
         linkdata: "XXXBB7B402",
         senderName: cbsUsersList[9].name,
         senderPic: cbsUsersList[9].avi,
+        rqid: 'uploadreq7',
         showid: 'cbssaturdaymorning',
         show: "CBS Saturday Morning",
         hed: "Holiday shopping increased despite inflation",
@@ -242,6 +256,7 @@ const requestData = [
         senderName: cbsUsersList[10].name,
         senderPic: cbsUsersList[10].avi,
         showid: 'cbseveningnews',
+        rqid: 'uploadreq8',
         senderID: 113253,
         show: "CBS Evening News",
         hed: "Family seeks justice after LAPD shooting",

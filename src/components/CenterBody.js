@@ -7,30 +7,55 @@ import NewRequest from "./NewRequest";
 import SearchIcon from '@mui/icons-material/Search';
 import Select from 'react-select'
 import showList from "./showList";
+import ClearAllIcon from '@mui/icons-material/ClearAll';
 const CenterBody = () => {
 
   const dailyData = requestData;
   const [jsonData, setJsonData] = useState(requestData);
+  const [isFilterOn, setIsFilterOn] = useState(false)
+  const [showInQuestion, setShowInQuestion] = useState(null)
+
+  const checkShows = (x, y) => {
+    x.length === y.length ? setIsFilterOn(false) : setIsFilterOn(true)
+  }
 
   // this filters the show by showID
   const filterShows = (e) => {
+    console.log(e)
+    setShowInQuestion(e.value)
     let tester = dailyData.filter(request => request.showid.toLowerCase() == e.showid.toLowerCase());
-    console.log(tester)
+    console.log(tester);
+    checkShows(tester, showList);
     setJsonData(tester);
+
+
+  }
+
+  // this will handle the clear filter button, once the show filters are on
+  const handleFilterClear = (e) => {
+    e.preventDefault()
+    setIsFilterOn(false)
+    setJsonData(requestData)
+
   }
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log(jsonData);
   };
-  const searchquery = useRef();
+  const [searchquery, setSearchQuery] = useState(null);
+  const [searchedArray, setSearchedArray] = useState(null)
+  const searchRef = useRef();
   const filterRef = useRef();
   const top = useRef();
+
   const handleSearch = e => {
-    e.preventDefault();
-    console.log("submit");
-    console.log(searchquery.current.value);
-    console.log(filterRef.current.value);
+    setSearchQuery(searchRef.current.value)
+    console.log(searchquery);
+    console.log(requestData.filter(show => show.hed.toLowerCase().includes(searchquery.toLowerCase().toString())))
+
+
+
   };
 
   const [isNewRequestMade, setIsNewRequestMade] = useState(false);
@@ -52,19 +77,22 @@ const CenterBody = () => {
   }
   return (
     <div className="requestcontainer">
+
       <div className="requestheader">
 
-        <Select onChange={(e) => filterShows(e)} ref={filterRef} placeholder={'Filter'} options={showList} />
+        <Select clearvalue={handleFilterClear} onChange={(e) => filterShows(e)} ref={filterRef} placeholder={'Filter'} options={showList} />
+        {isFilterOn ? <button onClick={handleFilterClear}>Clear Filter</button> : ''}
 
         <div>
-          <input ref={searchquery} placeholder="Search Piqué" type='search' />  <SearchIcon onClick={handleSearch} />
+          <input ref={searchRef} placeholder="Search Piqué" type='search' onChange={handleSearch} />  <SearchIcon onClick={handleSearch} />
         </div>
 
       </div>
       <div className="buttondiv"><button onClick={handleNewRequest} id='requestbutton'>New</button></div>
 
       {isNewRequestMade ? <NewRequest handleNewRequest={handleNewRequest} onClick={handleNewRequest} /> : ''}
-
+      <br />
+      {jsonData.length == 0 ? <div>No requests found for <b>{showInQuestion}</b></div> : ''}
       <div className="requestsholder">
         {jsonData.map(info => (
           <RequestPosting

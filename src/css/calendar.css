@@ -1,3 +1,21 @@
 .bigcalendar {
   width: 100%;
 }
+
+.duelist {
+  background: rgb(216, 216, 216);
+  margin: 0.5em auto;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.duelist ul {
+  list-style: none;
+  font-size: 14px;
+}
+
+.calendardiv {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
