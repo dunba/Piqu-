@@ -18,8 +18,8 @@ const IndividualRequest = ({ senderPic, url, handleRequest, uploadColor, type, s
                 </div>
             </div>
             {url && (
-                <p>
-                    <b>URL: </b>
+                <p className='reqbody'>
+                    <b id='reqhead'>URL: </b>
                     {url}
                 </p>
             )}

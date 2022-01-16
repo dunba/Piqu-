@@ -13,6 +13,7 @@ const requestData = [
         senderPic: cbsUsersList[0].avi,
         senderID: 123456,
         show: "Special",
+        showid: 'specials'
 
 
     },
@@ -24,6 +25,7 @@ const requestData = [
         senderPic: cbsUsersList[1].avi,
         senderID: 123456,
         show: "CBSN",
+        showid: 'cbsn'
 
     },
     {
@@ -34,6 +36,7 @@ const requestData = [
         senderPic: cbsUsersList[2].avi,
         senderID: 123456,
         show: "CBS Mornings",
+        showid: 'cbsmornings'
 
     },
     {
@@ -44,6 +47,8 @@ const requestData = [
         senderPic: cbsUsersList[1].avi,
         senderID: 123456,
         show: "CBS Mornings",
+        showid: 'cbsmornings'
+
 
     },
     {
@@ -63,6 +68,8 @@ const requestData = [
         linkdata: "XX2XBBB400",
         senderName: cbsUsersList[3].name,
         senderPic: cbsUsersList[3].avi,
+        showid: 'redandblue',
+
         senderID: 123456,
         show: "Red and Blue",
         hed: "Eye Opener: CDCs COVID isolation guidelines raise questions",
@@ -88,6 +95,8 @@ const requestData = [
         senderName: cbsUsersList[4].name,
         senderPic: cbsUsersList[4].avi,
         senderID: 123453,
+        showid: 'cbsmornings',
+
         show: "CBS Mornings",
         hed: "Dr. Walensky on CDC's new COVID guidelines",
         shorthed: "Dr. Walensky on CDC's new COVID guidelines",
@@ -107,6 +116,7 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "XXXB2BB402",
+        showid: 'cbssaturdaymorning',
         senderName: cbsUsersList[5].name,
         senderPic: cbsUsersList[5].avi,
         senderID: 123253,
@@ -131,6 +141,8 @@ const requestData = [
         linkdata: "4XXXBBB402",
         senderName: cbsUsersList[6].name,
         senderPic: cbsUsersList[6].avi,
+        showid: 'cbseveningnews',
+
         senderID: 113253,
         show: "CBS Evening News",
         hed: "Family seeks justice after LAPD shooting",
@@ -156,6 +168,7 @@ const requestData = [
         senderName: cbsUsersList[7].name,
         senderPic: cbsUsersList[7].avi,
         senderID: 123456,
+        showid: 'redandblue',
         show: "Red and Blue",
         hed: "Eye Opener: CDCs COVID isolation guidelines raise questions",
         shorthed: "Eye Opener: CDC guidelines raise questions",
@@ -182,6 +195,7 @@ const requestData = [
         senderPic: cbsUsersList[8].avi,
         senderID: 123453,
         show: "CBS Mornings",
+        showid: 'cbsmornings',
         hed: "Dr. Walensky on CDC's new COVID guidelines",
         shorthed: "Dr. Walensky on CDC's new COVID guidelines",
         dek: "CDC Director Dr. Rochelle Walensky joins \"CBS Mornings\" to discuss why the agency issued new COVID-19 isolation and quarantine guidelines."
@@ -203,6 +217,7 @@ const requestData = [
         linkdata: "XXXBB7B402",
         senderName: cbsUsersList[9].name,
         senderPic: cbsUsersList[9].avi,
+        showid: 'cbssaturdaymorning',
         show: "CBS Saturday Morning",
         hed: "Holiday shopping increased despite inflation",
         shorthed: "Holiday shopping increased despite inflation",
@@ -226,6 +241,7 @@ const requestData = [
         linkdata: "XXXBB8B402",
         senderName: cbsUsersList[10].name,
         senderPic: cbsUsersList[10].avi,
+        showid: 'cbseveningnews',
         senderID: 113253,
         show: "CBS Evening News",
         hed: "Family seeks justice after LAPD shooting",

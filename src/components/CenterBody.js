@@ -9,15 +9,14 @@ import Select from 'react-select'
 import showList from "./showList";
 const CenterBody = () => {
 
-  const dailyData = useState(requestData);
+  const dailyData = requestData;
   const [jsonData, setJsonData] = useState(requestData);
 
-  // this filters the show by name
-  const filterShows = (value) => {
-    console.log(value)
-    let tester = dailyData.filter(request => request.show.toLowerCase().includes(value.toLowerCase()));
+  // this filters the show by showID
+  const filterShows = (e) => {
+    let tester = dailyData.filter(request => request.showid.toLowerCase() == e.showid.toLowerCase());
     console.log(tester)
-    setJsonData(dailyData.filter(request => request.show.toLowerCase().includes(value.toLowerCase())));
+    setJsonData(tester);
   }
 
   const handleSubmit = e => {
@@ -55,7 +54,7 @@ const CenterBody = () => {
     <div className="requestcontainer">
       <div className="requestheader">
 
-        <Select ref={filterRef} placeholder={'Filter'} options={showList} />
+        <Select onChange={(e) => filterShows(e)} ref={filterRef} placeholder={'Filter'} options={showList} />
 
         <div>
           <input ref={searchquery} placeholder="Search Piqué" type='search' />  <SearchIcon onClick={handleSearch} />
