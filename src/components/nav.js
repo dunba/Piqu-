@@ -5,14 +5,14 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import GroupIcon from '@mui/icons-material/Group';
 import MailIcon from '@mui/icons-material/Mail';
 import Mail from "@mui/icons-material/Mail";
-
+import FeedIcon from '@mui/icons-material/Feed';
 const Nav = () => {
   return (
     <div className="navholder">
       <nav>
         <ul>
           <li><HomeIcon /></li>
-          {/* <li><AccessTimeIcon /></li> */}
+          <li><FeedIcon /></li>
           <li><MailIcon /></li>
           <li><GroupIcon /></li>
         </ul>

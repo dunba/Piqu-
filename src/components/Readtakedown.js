@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Readtakedown = ({ handleRequest, takedownColor, type, senderName, url, deadline }) => {
+const individualRequest = ({ handleRequest, takedownColor, type, senderName, url, deadline }) => {
     return (
         <div className="showtitleandhed" onClick={handleRequest}>
             <div className="postingheader">
@@ -12,7 +12,7 @@ const Readtakedown = ({ handleRequest, takedownColor, type, senderName, url, dea
 
                         backgroundColor: `#${takedownColor}`,
                     }}
-                />
+                ></div>
 
                 <div>
                     <p>New {type} Request </p>
@@ -21,11 +21,12 @@ const Readtakedown = ({ handleRequest, takedownColor, type, senderName, url, dea
                     </div>
                 </div>
             </div>
-            <p>
-                <b>URL: </b>
-                {url}
-            </p>
-
+            {url && (
+                <p>
+                    <b>URL: </b>
+                    {url}
+                </p>
+            )}
             <hr />
             <div className="timeanddate">
                 <div>Due: {deadline.toDateString()}</div>
@@ -36,4 +37,4 @@ const Readtakedown = ({ handleRequest, takedownColor, type, senderName, url, dea
     )
 }
 
-export default Readtakedown
+export default individualRequest

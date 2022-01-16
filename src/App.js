@@ -5,7 +5,7 @@ import Home from "./components/home";
 import Portal from "./components/portal";
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route
 } from "react-router-dom";
 
@@ -13,26 +13,30 @@ function App() {
   return (
 
 
+    <Router>
 
-    <div className="App">
+
+      <div className="App">
 
 
-      <div id="navbar">
-        <Nav />
+
+        <div id="navbar">
+          <Nav />
+        </div>
+
+
+
+
+        <div id="homepage">
+          <Home />
+        </div>
+
+
+
+
       </div>
 
-
-
-
-      <div id="homepage">
-        <Home />
-      </div>
-
-
-
-    </div>
-
-
+    </Router>
 
   );
 }

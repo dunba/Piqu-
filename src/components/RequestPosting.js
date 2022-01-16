@@ -12,9 +12,9 @@ import Close from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ReadUpload from "./ReadUpload";
+import IndividualRequest from "./individualRequest";
 import Readtakedown from "./Readtakedown";
-const RequestPosting = ({
+const RequestPosting = ({ senderPic,
   url,
   senderName,
   type,
@@ -118,7 +118,7 @@ const RequestPosting = ({
               <div>
                 <img
                   id="profilepic"
-                  src="https://thispersondoesnotexist.com/image"
+                  src={senderPic}
                 />{" "}
                 {senderName}
               </div>
@@ -134,44 +134,23 @@ const RequestPosting = ({
       )}
       {/* end of request popup */}
 
-      {type === "Upload" ? (
-        <ReadUpload
-          handleRequest={handleRequest}
-          uploadColor={uploadColor}
-          type={type}
-          senderName={senderName}
-          hed={hed}
-          shortHed={shortHed}
-          deadline={deadline}
-        />
-      ) : (
-        ""
-      )}
-      {type === "Takedown" ? (
-        <Readtakedown
-          handleRequest={handleRequest}
-          takedownColor={takedownColor}
-          type={type}
-          senderName={senderName}
-          url={url}
-          deadline={deadline}
-        />
-      ) : (
-        ""
-      )}
+      <IndividualRequest
+        senderPic={senderPic}
+        handleRequest={handleRequest}
+        uploadColor={uploadColor}
+        type={type}
+        senderName={senderName}
+        hed={hed}
+        shortHed={shortHed}
+        deadline={deadline}
 
-      <div className="verticonholder">
-        <MoreVertIcon id="verticon" onClick={handleVert} />
-        {isVertClicked ? (
-          <div className="vertpopup">
-            <ArticleIcon id="requesticon" />
-            <CheckCircleIcon id="requesticon_approve" />
-            <CancelIcon id="requesticon_cancel" />
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
+        url={url}
+
+      />
+
+
+
+
     </div>
   );
 };

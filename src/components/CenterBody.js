@@ -69,6 +69,7 @@ const CenterBody = () => {
       <div className="requestsholder">
         {jsonData.map(info => (
           <RequestPosting
+            senderPic={info.senderPic}
             url={info.url}
             senderName={info.senderName}
             type={info.type}

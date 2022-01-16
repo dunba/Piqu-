@@ -227,3 +227,31 @@
   border-radius: 50%;
   border: 5px solid green;
 }
+
+#newrequesttype {
+  font-size: 16px;
+}
+
+#sendername {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+#reqhead {
+  font-size: 14px;
+}
+
+.reqbody {
+  font-size: 14px;
+  font-weight: lighter;
+}
+#reqdate {
+  font-size: 12px;
+}
+
+#requestavi {
+  width: 2.5em;
+}
+.requestaviholder {
+  padding: 0 0.5em;
+}

@@ -8,28 +8,29 @@ const Whosonline = () => {
     const handleAviHover = () => {
         !isAviHovered ? setIsAviHovered(true) : setIsAviHovered(false)
     }
+    let onlineusers = cbsUsersList.filter(user => user.online);
 
     return (
         < div className="onairsection" >
             <b>Who's Online?</b>
             <div className='avatarholders'>
-                {cbsUsersList.map((users, key) => (
+                {onlineusers.map((users, key) => (
 
                     <div className='onlineholder'>
-                        <div>
-                            <Tooltip title={users.name}>
-                                <img onClick={handleAviHover} id='onlineavi' src={users.avi} />
+
+                        <Tooltip title={users.name} arrow>
+                            <img onClick={handleAviHover} id='onlineavi' src={users.avi} />
 
 
-                            </Tooltip>
+                        </Tooltip>
 
-                        </div>
 
 
                     </div>
 
                 ))}
             </div>
+            <br />
             <a href=''>13 More</a>
         </div >
     )
