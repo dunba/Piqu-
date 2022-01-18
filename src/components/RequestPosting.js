@@ -14,7 +14,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IndividualRequest from "./individualRequest";
 import Readtakedown from "./Readtakedown";
-const RequestPosting = ({ senderPic,
+const RequestPosting = ({ rqid, senderPic,
   url,
   senderName,
   type,
@@ -62,79 +62,10 @@ const RequestPosting = ({ senderPic,
   return (
     // this div below is the requestpopup
     <div className="openedrequest">
-      {/* request popup */}
-      {isRequestOpen ? (
-        <div className="requestpopup">
-          <div className="popupinfo">
-            <div className="requestheader">
-              <div>REQUEST</div>
-              <div onClick={handleRequest}>
-                <CloseIcon id="closeicon" />
-              </div>
-            </div>
-            <div className="informationsection">
-              <b>SHOW</b>
-              <br />
-              {show}
-              <br />
-              <b>HED </b>
-              <br />
-              {hed}
-              <br />
-              <b>SHORT HED </b>
-              <br />
-              {shortHed}
-              <br />
-              <b>DEK</b>
-              <br />
-              {dek}
-              <br />
-              {attachments ? (
-                <p>
-                  <b>Attachments</b>
-                  <br />
-                  <a href="">{attachments}</a>{" "}
-                  <CloudDownloadIcon id="downloadicon" />
-                </p>
-              ) : (
-                ""
-              )}
 
-              <br />
-              {mos ? (
-                <p>
-                  <b>MOS</b>
-                  <br />
-                  {mos}
-                </p>
-              ) : (
-                ""
-              )}
-            </div>
-            <br />
-            <div className="informationsection">
-              <div> Requested by: </div>
-
-              <div>
-                <img
-                  id="profilepic"
-                  src={senderPic}
-                />{" "}
-                {senderName}
-              </div>
-            </div>
-            <div className="submitdiv">
-              {" "}
-              <button>Take</button>
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-      {/* end of request popup */}
 
       <IndividualRequest
+        rqid={rqid}
         senderPic={senderPic}
         handleRequest={handleRequest}
         uploadColor={uploadColor}

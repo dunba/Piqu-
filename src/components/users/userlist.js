@@ -13,17 +13,17 @@ let jakeAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShor
 let tomAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=WinterHat2&accessoriesType=Blank&hatColor=Heather&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=SadConcerned&mouthType=Eating&skinColor=Light'
 
 const cbsUsersList = [
-    { name: 'Stacy Rashford', avi: stacyAvatar, online: false },
-    { name: 'Mary Jones', avi: maryAvatar, online: false },
-    { name: 'Michael Scott', avi: michaelAvatar, online: true },
-    { name: 'Kyle Martinez', avi: kyleAvatar, online: true },
-    { name: 'Kevin Parker', avi: kevinAvatar, online: false },
-    { name: 'Jordan Freiman', avi: jordanAvatar, online: false },
-    { name: 'Amalia Nunez', avi: amaliaAvatar, online: true },
-    { name: 'Eddie Baker', avi: eddieAvatar, online: false },
-    { name: 'Julie Minamino', avi: julieAvatar, online: true },
-    { name: 'Jake Browning', avi: jakeAvatar, online: true },
-    { name: 'Tom Hoernberger', avi: tomAvatar, online: true }
+    { name: 'Stacy Rashford', avi: stacyAvatar, online: false, userID: 'stacyrashford' },
+    { name: 'Mary Jones', avi: maryAvatar, online: false, userID: 'maryjones' },
+    { name: 'Michael Scott', avi: michaelAvatar, online: true, userID: 'michaelscott' },
+    { name: 'Kyle Martinez', avi: kyleAvatar, online: true, userID: 'kylemartinez' },
+    { name: 'Kevin Parker', avi: kevinAvatar, online: false, userID: 'kevinparker' },
+    { name: 'Jordan Freiman', avi: jordanAvatar, online: false, userID: 'jordanfreiman' },
+    { name: 'Amalia Nunez', avi: amaliaAvatar, online: true, userID: 'amalianunez' },
+    { name: 'Eddie Baker', avi: eddieAvatar, online: false, userID: 'eddiebaker' },
+    { name: 'Julie Minamino', avi: julieAvatar, online: true, userID: 'julieminamino' },
+    { name: 'Jake Browning', avi: jakeAvatar, online: true, userID: 'jakebrowning' },
+    { name: 'Tom Hoernberger', avi: tomAvatar, online: true, userID: 'tomhoernberger' }
 ]
 
 export default cbsUsersList

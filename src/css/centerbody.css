@@ -58,8 +58,8 @@
   flex-direction: row;
 }
 .showtitleandhed {
+  width: 100%;
   text-align: start;
-
   margin: 0em 1em;
   display: flex;
   padding: 1em 0;

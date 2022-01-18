@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import requestData from "./requestdata";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "../css/calendar.css";
 
 const CalendarPage = () => {
@@ -28,21 +29,23 @@ const CalendarPage = () => {
         />
       </div>
       <br />
-      <div>
 
-        Due{" "}
-        {datesAreOnSameDay(calendardate, todoDate)
-          ? "Today"
-          : `on ${todoDate.toDateString()} `} ({dueRequests.length})
-      </div>
       <div className="duelist">
+        <div>
+
+          Due{" "}
+          {datesAreOnSameDay(calendardate, todoDate)
+            ? "Today"
+            : `on ${todoDate.toDateString()} `} ({dueRequests.length})
+        </div>
         {dueRequests.map(request => (
-          <ul>
-            <li key={`${request.linkdata}${request.postID}`}>
+          <NavLink style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${request.rqid}`}> <div className="duerequest" key={`${request.linkdata}${request.postID}`}>
+            <p >
               {request.shorthed}
-            </li>
-          </ul>
+            </p>
+          </div></NavLink>
         ))}
+        {dueRequests.length == 0 ? <div><br />No requests</div> : ''}
 
       </div>
 

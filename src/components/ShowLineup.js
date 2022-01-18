@@ -6,6 +6,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ShowClips from "./ShowClips";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ShowLineup = () => {
   const [isClipsOpen, setIsClipsOpen] = useState(false)
@@ -22,11 +23,13 @@ const ShowLineup = () => {
           <div >
             {isClipsOpen ? <ShowClips show={show} handleShowClips={handleShowClips} /> : ''}
             <div className="showlisting" onClick={handleShowClips}>
-              <div className="dailyshow">
-                <p id='topdaily'>{show.type}.{show.airtime} hours ago</p>
-                <p id='bottomdaily'> {show.value}</p>
-                <p id='showchannel'>Channel: {show.channel}</p>
-              </div>
+              <Link style={{ color: 'inherit', textDecoration: "none" }} to={`/rundowns/${show.showid}`}>
+                <div className="dailyshow">
+                  <p id='topdaily'>{show.type}·{show.airtime} hours ago</p>
+                  <p id='bottomdaily'> {show.value}</p>
+                  <p id='showchannel'>Channel: {show.channel}</p>
+                </div>
+              </Link>
             </div>
           </div>
         ))}

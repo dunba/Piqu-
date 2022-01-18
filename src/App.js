@@ -4,7 +4,9 @@ import Nav from "./components/nav";
 import Home from "./components/home";
 import Portal from "./components/portal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import IndividualRundowns from "./components/IndividualRundowns";
 import Rundowns from "./components/Rundowns";
+import Requestpopup from "./components/Requestpopup";
 function App() {
   return (
 
@@ -22,12 +24,13 @@ function App() {
 
           <div id="homepage">
             <Route path='/' component={Home} exact />
-            <Route path='/rundowns' component={Rundowns} />
+            <Route path='/rundowns' exact component={Rundowns} />
           </div>
 
 
-
         </Switch>
+        <Route path='/rundowns/:id' component={IndividualRundowns} />
+        <Route path='/requests/:id' component={Requestpopup} />
 
       </div>
 
