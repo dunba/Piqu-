@@ -1,5 +1,5 @@
 import React from 'react'
-import requestData from './requestdata'
+import requestData from '../dummy data/requestdata';
 import { useState, useEffect } from 'react'
 import CloseIcon from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";

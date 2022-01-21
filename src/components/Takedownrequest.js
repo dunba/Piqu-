@@ -1,7 +1,6 @@
 import React from 'react'
 import Select from 'react-select'
-import showList from "./showList";
-
+import showList from '../dummy data/showList'
 
 const Takedownrequest = () => {
     return (

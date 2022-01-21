@@ -7,6 +7,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import Mail from "@mui/icons-material/Mail";
 import FeedIcon from '@mui/icons-material/Feed';
 import { NavLink } from "react-router-dom";
+
 const Nav = () => {
   return (
     <div className="navholder">

@@ -16,7 +16,7 @@
 #lefthalf {
   width: 33.33%;
   height: 100vh;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   border-right: 0.1em solid rgb(218, 218, 218);
   text-align: center;
 }

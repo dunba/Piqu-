@@ -6,7 +6,7 @@ import Uploadrequest from "./Uploadrequest";
 import Takedownrequest from "./Takedownrequest";
 import Otherrequest from "./Otherrequest";
 import Select from 'react-select'
-import showList from "./showList";
+import showList from "../dummy data/showList";
 
 const NewRequest = ({ handleNewRequest }) => {
   const [isRadioClicked, setIsRadioClicked] = useState(false);

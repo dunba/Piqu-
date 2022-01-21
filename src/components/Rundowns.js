@@ -1,5 +1,5 @@
 import React from 'react'
-import showList from './showList'
+import showList from '../dummy data/showList'
 import { NavLink } from 'react-router-dom'
 
 const Rundowns = () => {

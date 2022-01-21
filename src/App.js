@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import IndividualRundowns from "./components/IndividualRundowns";
 import Rundowns from "./components/Rundowns";
 import Requestpopup from "./components/Requestpopup";
+import Announcements from "./components/Announcements";
+
 function App() {
   return (
 
@@ -25,6 +27,7 @@ function App() {
           <div id="homepage">
             <Route path='/' component={Home} exact />
             <Route path='/rundowns' exact component={Rundowns} />
+            <Route path='/announcements' exact component={Announcements} />
           </div>
 
 

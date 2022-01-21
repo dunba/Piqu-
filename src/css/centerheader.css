@@ -1,6 +1,31 @@
-.rightsidepopup {
-  border: 1px solid pink;
+.userconsole {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: rgb(216, 216, 216);
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+  width: 50%;
 }
-.popupheader {
-  background-color: #fff;
+
+.consolewelcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.consoleicon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.consolewelcome p {
+  margin: 0;
+}
+
+#useravi {
+  width: 4em;
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import "../css/centerbody.css";
-import requestData from "./requestdata";
+import requestData from "../dummy data/requestdata";
 import { useState, useRef } from "react";
 import RequestPosting from "./RequestPosting";
 import NewRequest from "./NewRequest";
 import SearchIcon from '@mui/icons-material/Search';
 import Select from 'react-select'
-import showList from "./showList";
+import showList from "../dummy data/showList";
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 const CenterBody = () => {
 

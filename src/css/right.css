@@ -23,6 +23,7 @@
 .navbottom {
   display: flex;
   flex-direction: column;
+  width: 33%;
   position: fixed;
   bottom: 0;
 
@@ -95,4 +96,8 @@
 
 #onairtoday {
   padding: 0.5em 0;
+}
+
+#infoicon {
+  transform: scale(0.8);
 }
