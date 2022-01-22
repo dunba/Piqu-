@@ -60,9 +60,10 @@ NOTE: If the EP / SEASON column is left BLANK that means that the episode is MMD
     },
     {
         announcementid: '12324fd',
-        head: 'Reminder - Season number changes for 2022',
-        body: `Just a reminder for Ref ID’s that the season and episodes have been changed starting this year. The template is updated but just keep it in mind when creating IDs.
-NOTE: If the EP / SEASON column is left BLANK that means that the episode is MMDD and the season is YYYY. Otherwise all others have the season number listed and episode number must be input. Please confirm you’ve seen this!`,
+        head: 'Logging on to Leostream',
+        body: ` DID ANYONE SAY.... LEOSTREAM!!??
+WELL LOOK NO FURTHER!!
+Here's a handy guide given by folks from Avid.`,
         poster: cbsUsersList[6],
         timePosted: todaysdate,
         seenbyUser: false,
@@ -70,15 +71,15 @@ NOTE: If the EP / SEASON column is left BLANK that means that the episode is MMD
         urgent: false
     },
     {
-        announcementid: '4598sdf',
+        announcementid: '4598ssdf',
         head: 'Fusion  Update 1/20',
         body: `Fusion will be going through a software update on 1/30/21 between the hours of 2 and 3pm. Please use revert to the AVID->MPX workflow during those hours if necessary`,
-        poster: cbsUsersList[6],
+        poster: cbsUsersList[5],
         timePosted: todaysdate,
         seenbyUser: false,
         usersSeen: [],
         urgent: false
-    },
+    }
 
 ]
 

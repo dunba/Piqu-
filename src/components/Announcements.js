@@ -1,5 +1,6 @@
 import React from 'react';
 import AnnouncementsData from '../dummy data/Announcementsdata';
+import '../css/mainannouncements.css'
 
 const Announcements = () => {
     let listofannouncements = AnnouncementsData

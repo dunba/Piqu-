@@ -3,7 +3,7 @@ import Announcementpopup from './Announcementpopup';
 import { useState } from 'react';
 
 const IndividualAnnouncement = ({ announcement }) => {
-    const characterLimit = 25;
+    const characterLimit = 35;
     const urgentemoji = '🆘'
     const cautionemoji = '⚠️'
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,8 +14,8 @@ const IndividualAnnouncement = ({ announcement }) => {
 
     return <div className='announcementslist' onClick={handleModal} >
         {
-            announcement.head.length >= characterLimit ? <p>{announcement.head.substring(0, characterLimit)}...</p>
-                : announcement.head
+            announcement.head.length >= characterLimit ? <p id='announcementtext'>{announcement.head.substring(0, characterLimit)}...</p>
+                : <p id='announcementtext'>{announcement.head}</p>
         }
 
         {isModalOpen ? <Announcementpopup handleModal={handleModal} announcement={announcement} /> : ''}

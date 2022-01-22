@@ -7,6 +7,7 @@ import "../css/calendar.css";
 import requestData from '../dummy data/requestdata'
 
 const CalendarPage = () => {
+  const [totalrequests, setTotalRequests] = useState(5)
   let calendardate = new Date();
   let [todoDate, setToDoDate] = useState(calendardate);
   const datesAreOnSameDay = (first, second) =>
@@ -14,11 +15,17 @@ const CalendarPage = () => {
     first.getMonth() === second.getMonth() &&
     first.getDate() === second.getDate();
 
-  const dueRequests = requestData.filter(request =>
+  const alldueRequests = requestData.filter(request =>
     datesAreOnSameDay(request.deadline, todoDate)
   );
+  const dueRequests = alldueRequests.slice(0, totalrequests)
   console.log(requestData);
   console.log(dueRequests);
+
+  const [isReqsExpanded, setIsReqsExpanded] = useState(false)
+  const handleRequestExpander = () => {
+    if (!isReqsExpanded) { setIsReqsExpanded(true); setTotalRequests(alldueRequests.length) } else { setIsReqsExpanded(false); setTotalRequests(5) };
+  }
   return (
     <div className='calendardiv' >
       <div>
@@ -31,23 +38,35 @@ const CalendarPage = () => {
       <br />
 
       <div className="duelist">
-        <div>
+        <div className="listcontainer">
 
           Due{" "}
           {datesAreOnSameDay(calendardate, todoDate)
             ? "Today"
-            : `on ${todoDate.toDateString()} `} ({dueRequests.length})
+            : `on ${todoDate.toDateString()} `} ({alldueRequests.length})
         </div>
         {dueRequests.map(request => (
-          <NavLink style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${request.rqid}`}> <div className="duerequest" key={`${request.linkdata}${request.postID}`}>
-            <p >
-              {request.shorthed}
-            </p>
-          </div></NavLink>
+          <NavLink style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${request.rqid}`}>
+
+            <ul className="duerequest" >
+              <li>{request.type} - {request.senderName}
+              </li>
+
+
+            </ul></NavLink>
         ))}
-        {dueRequests.length == 0 ? <div><br />No requests</div> : ''}
+
+
+        {dueRequests.length == 0 ? <div><br />No requests</div> :
+          <div>
+            {!isReqsExpanded && (<p onClick={handleRequestExpander}>See More</p>)}
+            {isReqsExpanded && (<p onClick={handleRequestExpander}>See Less</p>)}
+          </div>
+
+        }
 
       </div>
+
 
     </div >
   );

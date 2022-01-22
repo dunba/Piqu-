@@ -22,10 +22,11 @@ const cbsUsersList = [
     { firstName: 'Kevin', lastName: ' Parker', avi: kevinAvatar, online: false, userID: 'kevinparker' },
     { firstName: 'Jordan', lastName: ' Freiman', avi: jordanAvatar, online: false, userID: 'jordanfreiman' },
     { firstName: 'Amalia', lastName: ' Nunez', avi: amaliaAvatar, online: true, userID: 'amalianunez' },
+    { firstName: 'Tom', lastName: ' Hoernberger', avi: tomAvatar, online: true, userID: 'tomhoernberger' },
+
     { firstName: 'Eddie', lastName: ' Baker', avi: eddieAvatar, online: false, userID: 'eddiebaker' },
     { firstName: 'Julie', lastName: ' Minamino', avi: julieAvatar, online: true, userID: 'julieminamino' },
     { firstName: 'Jake', lastName: ' Browning', avi: jakeAvatar, online: true, userID: 'jakebrowning' },
-    { firstName: 'Tom', lastName: ' Hoernberger', avi: tomAvatar, online: true, userID: 'tomhoernberger' },
     {
         firstName: 'Dunba', lastName: 'Tehinse',
         avi: dunbaAvi,

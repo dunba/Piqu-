@@ -5,14 +5,20 @@
 .duelist {
   background: rgb(216, 216, 216);
   margin: auto;
-  border-radius: 20px;
-  width: 50%;
+  padding: 1em 0;
+  border-radius: 10px;
+  width: 53%;
 }
 
 .duerequest {
   font-size: 14px;
   text-align: left;
-  width: 100%;
+  list-style: none;
+
+  margin: 0;
+}
+.calendarlist {
+  padding: 1em;
 }
 .duerequest:hover {
   background: rgb(235, 234, 234);
@@ -21,5 +27,7 @@
 .calendardiv {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 1em auto;
+  justify-content: center;
+  align-items: center;
 }

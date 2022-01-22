@@ -9,3 +9,6 @@
 #homepage {
   width: 95%;
 }
+* {
+  font-family: system-ui;
+}

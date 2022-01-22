@@ -1,0 +1,12 @@
+.requestpage {
+  display: flex;
+  flex-direction: column;
+}
+.requestheader {
+  display: flex;
+  flex-direction: row;
+}
+.informationsection {
+  display: flex;
+  flex-direction: column;
+}

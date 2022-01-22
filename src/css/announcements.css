@@ -80,3 +80,30 @@
 .announcementbody:hover {
   cursor: text;
 }
+
+.announcementsfooter {
+  display: flex;
+  padding: 0.5em 1em;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addannouncement {
+  border: 1px solid rgb(148, 148, 148);
+  width: 2em;
+  border-radius: 50%;
+  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+}
+.addannouncement:hover {
+  background: rgb(235, 234, 234);
+  cursor: pointer;
+}
+
+#announcementtext {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0.5em 0;
+}
