@@ -84,7 +84,7 @@ const CenterBody = () => {
         {isFilterOn ? <button onClick={handleFilterClear}>Clear Filter</button> : ''}
 
         <div>
-          <input ref={searchRef} placeholder="Search Piqué" type='search' onChange={handleSearch} />  <SearchIcon onClick={handleSearch} />
+          <input ref={searchRef} placeholder="Search Piqué" type='search' onChange={handleSearch} />
         </div>
 
       </div>

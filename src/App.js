@@ -28,12 +28,14 @@ function App() {
             <Route path='/' component={Home} exact />
             <Route path='/rundowns' exact component={Rundowns} />
             <Route path='/announcements' exact component={Announcements} />
+            <Route path='/rundowns/:id' component={IndividualRundowns} />
+            <Route path='/requests/:id' component={Requestpopup} />
+
+
           </div>
 
 
         </Switch>
-        <Route path='/rundowns/:id' component={IndividualRundowns} />
-        <Route path='/requests/:id' component={Requestpopup} />
 
       </div>
 

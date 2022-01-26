@@ -17,9 +17,7 @@ const RightConsole = () => {
       <Whosonline />
 
 
-      <div className="navbottom">
-        <RightSideHeader />
-      </div>
+
     </div>
   );
 };

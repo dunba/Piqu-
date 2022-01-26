@@ -5,6 +5,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/calendar.css";
 import requestData from '../dummy data/requestdata'
+import RightSideHeader from "./centerheader";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const CalendarPage = () => {
   const [totalrequests, setTotalRequests] = useState(5)
@@ -45,14 +48,13 @@ const CalendarPage = () => {
             ? "Today"
             : `on ${todoDate.toDateString()} `} ({alldueRequests.length})
         </div>
+        <br />
         {dueRequests.map(request => (
           <NavLink style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${request.rqid}`}>
 
             <ul className="duerequest" >
-              <li>{request.type} - {request.senderName}
+              <li>{request.type == 'Upload' ? <ArrowDropUpIcon /> : ''}{request.type == 'Takedown' ? <ArrowDropDownIcon /> : ''} - {request.senderName}
               </li>
-
-
             </ul></NavLink>
         ))}
 
@@ -64,6 +66,10 @@ const CalendarPage = () => {
           </div>
 
         }
+
+      </div>
+      <div className="navbottom">
+        <RightSideHeader />
 
       </div>
 

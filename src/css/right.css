@@ -21,17 +21,6 @@
   flex-direction: column;
   width: 100%;
 }
-.navbottom {
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  position: fixed;
-  bottom: 0;
-
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-}
 
 .rightconsole {
   display: flex;

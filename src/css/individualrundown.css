@@ -1,0 +1,13 @@
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.rundowncontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
