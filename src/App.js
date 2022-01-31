@@ -8,8 +8,14 @@ import IndividualRundowns from "./components/IndividualRundowns";
 import Rundowns from "./components/Rundowns";
 import Requestpopup from "./components/Requestpopup";
 import Announcements from "./components/Announcements";
+import db from './firebase-config'
+import { collection, getDocs } from '@firebase/firestore'
+import { useEffect } from "react";
+import { useState } from "react";
+
 
 function App() {
+
   return (
 
 

@@ -254,3 +254,10 @@
 .requestaviholder {
   padding: 0 0.5em;
 }
+
+.spinnerholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

@@ -19,7 +19,6 @@ const RightSideHeader = () => {
 
   const date = new Date();
   const today = date.toDateString();
-  console.log(currentuser)
   return (
 
     < div className="userconsole" >

@@ -5,6 +5,10 @@
   padding: 0 1em;
 }
 
+.loadingholder {
+  display: flex;
+  margin: auto;
+}
 .announcementslist:hover {
   background: rgb(235, 234, 234);
   cursor: pointer;
@@ -85,8 +89,18 @@
   display: flex;
   padding: 0.5em 1em;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+#annfootertext {
+  font-size: 0.8em;
+  font-weight: bold;
+  list-style: none;
+}
+
+#annfootertext:hover {
+  cursor: pointer;
 }
 
 .addannouncement {

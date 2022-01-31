@@ -1,5 +1,7 @@
 import Years from "react-calendar/dist/umd/DecadeView/Years";
 
+
+
 let stacyAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=LongHairMiaWallace&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Skull&eyeType=Side&eyebrowType=Default&mouthType=Concerned&skinColor=Yellow'
 let maryAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=Blank&facialHairColor=Black&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Dizzy&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Brown';
 let michaelAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Wayfarers&hatColor=Gray02&facialHairType=Blank&clotheType=Hoodie&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=Default&mouthType=Grimace&skinColor=DarkBrown';
@@ -16,12 +18,22 @@ let tomAvatar = 'https://avataaars.io/?avatarStyle=Circle&topType=WinterHat2&acc
 let dunbaAvi = 'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Sunglasses&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Gray01&eyeType=Default&eyebrowType=RaisedExcitedNatural&mouthType=Default&skinColor=Black'
 const cbsUsersList = [
     { firstName: 'Stacy', lastName: 'Rashford', avi: stacyAvatar, online: false, userID: 'stacyrashford' },
+
+
     { firstName: 'Mary', lastName: ' Jones', avi: maryAvatar, online: false, userID: 'maryjones' },
     { firstName: 'Michael', lastName: ' Scott', avi: michaelAvatar, online: true, userID: 'michaelscott' },
+
     { firstName: 'Kyle', lastName: ' Martinez', avi: kyleAvatar, online: true, userID: 'kylemartinez' },
+
     { firstName: 'Kevin', lastName: ' Parker', avi: kevinAvatar, online: false, userID: 'kevinparker' },
+
+
     { firstName: 'Jordan', lastName: ' Freiman', avi: jordanAvatar, online: false, userID: 'jordanfreiman' },
+
+
     { firstName: 'Amalia', lastName: ' Nunez', avi: amaliaAvatar, online: true, userID: 'amalianunez' },
+
+
     { firstName: 'Tom', lastName: ' Hoernberger', avi: tomAvatar, online: true, userID: 'tomhoernberger' },
 
     { firstName: 'Eddie', lastName: ' Baker', avi: eddieAvatar, online: false, userID: 'eddiebaker' },

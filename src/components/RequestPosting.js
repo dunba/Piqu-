@@ -8,33 +8,18 @@ import FlagIcon from "@mui/icons-material/Flag";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState, useEffect, useRef } from "react";
-import Close from "@mui/icons-material/Close";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IndividualRequest from "./individualRequest";
-import Readtakedown from "./Readtakedown";
-const RequestPosting = ({ rqid, senderPic,
-  url,
-  senderName,
-  type,
-  deadline,
-  mos,
-  started,
-  flagged,
-  opened,
-  attachments,
-  showColor,
-  show,
-  showAvatar,
-  hed,
-  shortHed,
-  dek,
+import { Link } from 'react-router-dom';
+import { Tooltip, Modal, Badge, Popover } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+const RequestPosting = ({ info, handleDelete
 }) => {
   const today = new Date();
   let timeanddate = today.toDateString();
   const [isRequestOpen, setisRequestOpen] = useState(false);
   const [isVertClicked, setisVertClicked] = useState(false);
+
+
+
   const handleRequest = () => {
     if (!isRequestOpen) {
       setisRequestOpen(true);
@@ -55,29 +40,65 @@ const RequestPosting = ({ rqid, senderPic,
     }
   };
 
-  let takedownColor = "FF6666";
-  let uploadColor = "CCFF99";
-  let RequestColor = "99CCFF";
 
   return (
     // this div below is the requestpopup
     <div className="openedrequest">
 
+      <div className="showtitleandhed" onClick={handleRequest} >
+        <Link style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${info.rqid.toString()}`}>
+          <div className="postingheader">
+            <div className='requestaviholder'
 
-      <IndividualRequest
-        rqid={rqid}
-        senderPic={senderPic}
-        handleRequest={handleRequest}
-        uploadColor={uploadColor}
-        type={type}
-        senderName={senderName}
-        hed={hed}
-        shortHed={shortHed}
-        deadline={deadline}
+            ><img id='requestavi' src={info.poster.avi} /></div>
 
-        url={url}
+            <div >
+              <p id='newrequesttype'>New {info.type} Request </p>
+              <div className="timeandname">
+                <p id='sendername' href=''>{info.poster.name} • {new Date(info.date).toTimeString()}</p>
+              </div>
+            </div>
+          </div>
+          {info.url && (
+            <p className='reqbody'>
+              <b id='reqhead'>URL: </b>
+              {info.url}
+            </p>
+          )}
+          {info.hed && (
+            <p className='reqbody'>
+              <b id='reqhead'>HED: </b>
+              {info.hed}
+            </p>
+          )}
+          {info.shortHed && (
+            <p className='reqbody'>
+              <b id='reqhead'>SHORT HED: </b>
+              {info.shortHed}
+            </p>
+          )}
+          {info.subject && (
+            <p className='reqbody'>
+              <b id='reqhead'>Subject: </b>
+              {info.subject}
+            </p>
+          )}
 
-      />
+
+          <br />
+
+
+        </Link>
+        <div className="timeanddate">
+          <div id='reqdate'>Due: {info.deadline.toString()}</div>
+          <div className="badges">
+            {info.deletable && (
+              <Tooltip arrow title={'Delete'} ><DeleteIcon onClick={() => { handleDelete(info.id) }} style={{ transform: 'scale(0.7)' }} id="verticon" /></Tooltip>
+            )}
+
+          </div>
+        </div>
+      </div>
 
 
 

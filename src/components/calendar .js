@@ -1,34 +1,47 @@
-import React from "react";
+import { React, useEffect, useState, useRef } from "react";
+import db from '../firebase-config'
+import { collection, getDocs, addDoc } from '@firebase/firestore'
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../css/calendar.css";
-import requestData from '../dummy data/requestdata'
 import RightSideHeader from "./centerheader";
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 const CalendarPage = () => {
-  const [totalrequests, setTotalRequests] = useState(5)
   let calendardate = new Date();
   let [todoDate, setToDoDate] = useState(calendardate);
-  const datesAreOnSameDay = (first, second) =>
-    first.getFullYear() === second.getFullYear() &&
-    first.getMonth() === second.getMonth() &&
-    first.getDate() === second.getDate();
+  const [pastDueArray, setPastDueArray] = useState([])
 
-  const alldueRequests = requestData.filter(request =>
-    datesAreOnSameDay(request.deadline, todoDate)
-  );
-  const dueRequests = alldueRequests.slice(0, totalrequests)
-  console.log(requestData);
-  console.log(dueRequests);
+  ///this section fetches the requestsList from the db
+  const [loading, setLoading] = useState(false)
+  const reqRef = collection(db, "requestsList");
+  const [reqList, setReqList] = useState([]);
 
-  const [isReqsExpanded, setIsReqsExpanded] = useState(false)
-  const handleRequestExpander = () => {
-    if (!isReqsExpanded) { setIsReqsExpanded(true); setTotalRequests(alldueRequests.length) } else { setIsReqsExpanded(false); setTotalRequests(5) };
+
+
+
+
+
+
+  const fetchreqList = async () => {
+    setLoading(true)
+    const data = await getDocs(reqRef)
+    const holderArray = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    const pastDue = holderArray.filter(a => a.deadline.getTime() <= calendardate.getTime())
+    setPastDueArray(pastDue)
+    setReqList(holderArray)
+    setLoading(false)
+    console.log(reqList)
   }
+
+  useEffect(() => {
+    fetchreqList()
+  }, [])
+
+
+
+
+
   return (
     <div className='calendardiv' >
       <div>
@@ -43,29 +56,15 @@ const CalendarPage = () => {
       <div className="duelist">
         <div className="listcontainer">
 
-          Due{" "}
-          {datesAreOnSameDay(calendardate, todoDate)
-            ? "Today"
-            : `on ${todoDate.toDateString()} `} ({alldueRequests.length})
+          Past Due ({pastDueArray.length}) | Due Soon
         </div>
         <br />
-        {dueRequests.map(request => (
-          <NavLink style={{ color: 'inherit', textDecoration: "none" }} to={`/requests/${request.rqid}`}>
-
-            <ul className="duerequest" >
-              <li>{request.type == 'Upload' ? <ArrowDropUpIcon /> : ''}{request.type == 'Takedown' ? <ArrowDropDownIcon /> : ''} - {request.senderName}
-              </li>
-            </ul></NavLink>
-        ))}
 
 
-        {dueRequests.length == 0 ? <div><br />No requests</div> :
-          <div>
-            {!isReqsExpanded && (<p onClick={handleRequestExpander}>See More</p>)}
-            {isReqsExpanded && (<p onClick={handleRequestExpander}>See Less</p>)}
-          </div>
 
-        }
+
+
+
 
       </div>
       <div className="navbottom">

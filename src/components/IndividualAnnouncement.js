@@ -7,6 +7,7 @@ const IndividualAnnouncement = ({ announcement }) => {
     const urgentemoji = '🆘'
     const cautionemoji = '⚠️'
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const handleModal = () => {
         !isModalOpen ? setIsModalOpen(true) : setIsModalOpen(false)
     }
@@ -18,7 +19,7 @@ const IndividualAnnouncement = ({ announcement }) => {
                 : <p id='announcementtext'>{announcement.head}</p>
         }
 
-        {isModalOpen ? <Announcementpopup handleModal={handleModal} announcement={announcement} /> : ''}
+        {isModalOpen ? <Announcementpopup handleModal={handleModal} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} announcement={announcement} /> : ''}
     </div >;
 };
 

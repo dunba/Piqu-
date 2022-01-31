@@ -1,31 +1,38 @@
 import cbsUsersList from "./userlist";
+import db from '../firebase-config'
+import { collection, getDoc } from '@firebase/firestore'
+
+const reqRef = collection(db, "requestsList");
+
+
+
+
+
+
+
 
 let fullDate = new Date()
 let sameDay = new Date(fullDate)
 const yesterday = sameDay.setDate(sameDay.getTime() - (24 * 60 * 60 * 1000));
 const tomorrow = sameDay.setDate(sameDay.getTime() + (24 * 60 * 60 * 1000));
 
+
+
 const requestData = [
     {
         type: 'Takedown',
         url: 'https://www.cbsnews.com/video/preview-indivisible-healing-hate/#x',
         deadline: fullDate,
-        senderName: `${cbsUsersList[0].firstName} ${cbsUsersList[0].lastName}`,
-        senderPic: cbsUsersList[0].avi,
-        senderID: 123456,
+        poster: cbsUsersList[0],
         show: "Special",
         showid: 'specials',
         rqid: 'takedownreq1'
-
-
     },
     {
         type: 'Takedown',
         url: 'https://www.cbsnews.com/video/apple-airtags-spark-safety-and-privacy-concerns/#x',
         deadline: fullDate,
-        senderName: `${cbsUsersList[1].firstName} ${cbsUsersList[1].lastName}`,
-        senderPic: cbsUsersList[1].avi,
-        senderID: 123456,
+        poster: cbsUsersList[1],
         show: "CBSN",
         showid: 'cbsn',
         rqid: 'takedownreq2'
@@ -37,8 +44,7 @@ const requestData = [
         type: 'Takedown',
         url: 'https://www.cbsnews.com/video/country-on-high-alert-one-month-before-winter-olympics/',
         deadline: fullDate,
-        senderName: `${cbsUsersList[2].firstName} ${cbsUsersList[2].lastName}`,
-        senderPic: cbsUsersList[2].avi,
+        poster: cbsUsersList[2],
         senderID: 123456,
         show: "CBS Mornings",
         showid: 'cbsmornings',
@@ -50,9 +56,7 @@ const requestData = [
         type: 'Takedown',
         url: 'https://www.cbsnews.com/video/thousands-of-schools-nationwide-get-creative-to-keep-kids-safe-in-class-despite-latest-covid-surge/',
         deadline: fullDate,
-        senderName: `${cbsUsersList[1].firstName} ${cbsUsersList[1].lastName}`,
-        senderPic: cbsUsersList[1].avi,
-        senderID: 123456,
+        poster: cbsUsersList[1],
         show: "CBS Mornings",
         showid: 'cbsmornings',
         rqid: 'takedownreq4'
@@ -64,23 +68,12 @@ const requestData = [
         type: 'Upload',
         deadline: fullDate,
         opened: false,
-        attachments: null,
-        postID: 1,
-        timesubmitted: null,
-        started: false,
-        complete: false,
-        receiverName: null,
-        receiverID: null,
         mos: 'XDF123MSA',
         thumbnail: null,
         url: null,
-        linkdata: "XX2XBBB400",
-        senderName: `${cbsUsersList[3].firstName} ${cbsUsersList[3].lastName}`,
-        senderPic: cbsUsersList[3].avi,
+        poster: cbsUsersList[3],
         showid: 'redandblue',
         rqid: 'uploadreq1',
-
-        senderID: 123456,
         show: "Red and Blue",
         hed: "Eye Opener: CDCs COVID isolation guidelines raise questions",
         shorthed: "Eye Opener: CDC guidelines raise questions",
@@ -102,9 +95,7 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "X1XXBBB402",
-        senderName: `${cbsUsersList[4].firstName} ${cbsUsersList[4].lastName}`,
-        senderPic: cbsUsersList[4].avi,
-        senderID: 123453,
+        poster: cbsUsersList[4],
         showid: 'cbsmornings',
         rqid: 'uploadreq2',
         show: "CBS Mornings",
@@ -127,9 +118,7 @@ const requestData = [
         url: null,
         linkdata: "XXXB2BB402",
         showid: 'cbssaturdaymorning',
-        senderName: `${cbsUsersList[5].firstName} ${cbsUsersList[5].lastName}`,
-        senderPic: cbsUsersList[5].avi,
-        senderID: 123253,
+        poster: cbsUsersList[5],
         rqid: 'uploadreq3',
         show: "CBS Saturday Morning",
         hed: "Holiday shopping increased despite inflation",
@@ -150,11 +139,9 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "4XXXBBB402",
-        senderName: `${cbsUsersList[6].firstName} ${cbsUsersList[6].lastName}`,
-        senderPic: cbsUsersList[6].avi,
+        poster: cbsUsersList[6],
         showid: 'cbseveningnews',
         rqid: 'uploadreq4',
-        senderID: 113253,
         show: "CBS Evening News",
         hed: "Family seeks justice after LAPD shooting",
         shorthed: "Family seeks justice after LAPD shooting",
@@ -176,10 +163,8 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "XXXBB5B400",
-        senderName: `${cbsUsersList[7].firstName} ${cbsUsersList[7].lastName}`,
-        senderPic: cbsUsersList[7].avi,
+        poster: cbsUsersList[7],
         rqid: 'uploadreq5',
-        senderID: 123456,
         showid: 'redandblue',
         show: "Red and Blue",
         hed: "Eye Opener: CDCs COVID isolation guidelines raise questions",
@@ -203,10 +188,8 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "XXX6BBB402",
-        senderName: `${cbsUsersList[8].firstName} ${cbsUsersList[8].lastName}`,
-        senderPic: cbsUsersList[8].avi,
+        poster: cbsUsersList[8],
         rqid: 'uploadreq6',
-        senderID: 123453,
         show: "CBS Mornings",
         showid: 'cbsmornings',
         hed: "Dr. Walensky on CDC's new COVID guidelines",
@@ -228,8 +211,7 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "XXXBB7B402",
-        senderName: `${cbsUsersList[9].firstName} ${cbsUsersList[9].lastName}`,
-        senderPic: cbsUsersList[9].avi,
+        poster: cbsUsersList[9],
         rqid: 'uploadreq7',
         showid: 'cbssaturdaymorning',
         show: "CBS Saturday Morning",
@@ -253,8 +235,7 @@ const requestData = [
         thumbnail: null,
         url: null,
         linkdata: "XXXBB8B402",
-        senderName: `${cbsUsersList[10].firstName} ${cbsUsersList[10].lastName}`,
-        senderPic: cbsUsersList[10].avi,
+        poster: cbsUsersList[10],
         showid: 'cbseveningnews',
         rqid: 'uploadreq8',
         senderID: 113253,

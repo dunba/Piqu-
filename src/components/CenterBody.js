@@ -1,33 +1,120 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
+import db from '../firebase-config'
+import { collection, getDocs, getDoc, onSnapshot, doc, deleteDoc } from '@firebase/firestore'
 import "../css/centerbody.css";
-import requestData from "../dummy data/requestdata";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import RequestPosting from "./RequestPosting";
 import NewRequest from "./NewRequest";
-import SearchIcon from '@mui/icons-material/Search';
 import Select from 'react-select'
-import showList from "../dummy data/showList";
-import ClearAllIcon from '@mui/icons-material/ClearAll';
+import Loading from 'react-loading'
+
 const CenterBody = () => {
 
-  const dailyData = requestData;
-  const [jsonData, setJsonData] = useState(requestData);
-  const [isFilterOn, setIsFilterOn] = useState(false)
-  const [showInQuestion, setShowInQuestion] = useState(null)
 
-  const checkShows = (x, y) => {
-    x.length === y.length ? setIsFilterOn(false) : setIsFilterOn(true)
+  ///this section fetches the requestsList from the db
+  const [loading, setLoading] = useState(false)
+  const reqRef = collection(db, "requestsList");
+  const [reqList, setReqList] = useState([]);
+
+
+
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you sure you want to delete this request?')) {
+      const reqDoc = doc(db, "requestsList", id);
+      await deleteDoc(reqDoc)
+      window.location.reload();
+    }
+
+
   }
 
-  // this filters the show by showID
-  const filterShows = (e) => {
-    console.log(e)
-    setShowInQuestion(e.value)
-    let tester = dailyData.filter(request => request.showid.toLowerCase() == e.showid.toLowerCase());
-    console.log(tester);
-    checkShows(tester, showList);
-    setJsonData(tester);
 
+
+
+
+  const fetchreqList = async () => {
+    setLoading(true)
+    const data = await getDocs(reqRef)
+    const holderArray = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    const sortedHolderArray = holderArray.sort((a, b) => b.date - a.date)
+    setReqList(sortedHolderArray)
+    setLoading(false)
+    console.log(reqList)
+  }
+
+
+  const items = [];
+
+  // const fetchReqs = async () => {
+  //   setLoading(true);
+  //   const reqsFromDB = db.collection('requestsList').onSnapshot(snapshot => {
+  //     snapshot.forEach(doc => {
+  //       items.push({ ...doc.data(), key: doc.id });
+  //     });
+
+  //   });
+  //   setReqList(items);
+  //   setLoading(false);
+  //   console.log(reqList)
+
+  // };
+
+
+  //////end of section////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  const dailyData = reqList;
+  const [jsonData, setJsonData] = useState(reqList);
+  const [isFilterOn, setIsFilterOn] = useState(false)
+  const [showInQuestion, setShowInQuestion] = useState(null)
+  //////////////////////////////////////////////////////////////////////////////////////
+
+
+
+  //this fetches the showlist from the db///////////////////////////////////////////// 
+  const showRef = collection(db, "showList");
+  const [shows, setShows] = useState([])
+
+  const fetchShowList = async () => {
+    const data = await getDocs(showRef)
+    setShows(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+
+  }
+  /////////////////////////////////////////////////////////////////////////////////////
+  useEffect(() => {
+    fetchreqList()
+    fetchShowList()
+  }, [])
+  let showList = shows
+
+
+  //this checks if a filter is on
+  // const checkShows = (x, y) => {
+  //   x.length === y.length ? setIsFilterOn(false) : setIsFilterOn(true)
+  // }
+
+  // this filters the show by showID
+  const filterShows = async (e) => {
+    setLoading(true)
+
+    setIsFilterOn(true)
+    setShowInQuestion(e.value)
+    let reqListCopy = reqList
+    let tester = reqList.filter(request => request.showid.toLowerCase() === e.showID.toLowerCase());
+    await setReqList(tester);
+    setLoading(false)
 
   }
 
@@ -35,7 +122,7 @@ const CenterBody = () => {
   const handleFilterClear = (e) => {
     e.preventDefault()
     setIsFilterOn(false)
-    setJsonData(requestData)
+    fetchreqList()
 
   }
 
@@ -52,7 +139,7 @@ const CenterBody = () => {
   const handleSearch = e => {
     setSearchQuery(searchRef.current.value)
     console.log(searchquery);
-    console.log(requestData.filter(show => show.hed.toLowerCase().includes(searchquery.toLowerCase().toString())))
+    console.log(reqList.filter(show => show.hed.toLowerCase().includes(searchquery.toLowerCase().toString())))
 
 
 
@@ -90,35 +177,26 @@ const CenterBody = () => {
       </div>
       <div className="buttondiv"><button onClick={handleNewRequest} id='requestbutton'>New</button></div>
 
-      {isNewRequestMade ? <NewRequest handleNewRequest={handleNewRequest} onClick={handleNewRequest} /> : ''}
+      {isNewRequestMade ? <NewRequest showList={showList} handleNewRequest={handleNewRequest} onClick={handleNewRequest} /> : ''}
       <br />
-      {jsonData.length == 0 ? <div>No requests found for <b>{showInQuestion}</b></div> : ''}
+      {isFilterOn && reqList.length == 0 ? <div>No requests found for <b>{showInQuestion}</b></div> : ''}
       <div className="requestsholder">
-        {jsonData.map(info => (
-          <RequestPosting
-            rqid={info.rqid}
-            senderPic={info.senderPic}
-            url={info.url}
-            senderName={info.senderName}
-            type={info.type}
-            deadline={info.deadline}
-            ref={top}
-            mos={info.mos}
-            dek={info.dek}
-            started={info.started}
-            flagged={info.flagged}
-            opened={info.opened}
-            showColor={info.showColor}
-            shortHed={info.shorthed}
-            show={info.show}
-            attachments={info.attachments}
-            showAvatar={info.showAvatar}
-            hed={info.hed}
-          />
-        ))}
+        {loading ?
+          <div className="spinnerholder"><Loading width={'50px'} color='white' />
+          </div> : <div>
+            {reqList.map(info => (
+              <RequestPosting
+                handleDelete={handleDelete}
+                info={info}
+              />
+            ))}</div>}
       </div>
+
     </div>
   );
 };
 
 export default CenterBody;
+{/* <RequestPosting
+  info={info}
+/> */}

@@ -30,11 +30,11 @@ const Requestpopup = ({ match }) => {
                         <div className="announcementposting">
                             <div className="announcementpicandinfo">
                                 <div>
-                                    <img id="announcementavi" src={selectdata.senderPic} />
+                                    <img id="announcementavi" src={selectdata.poster.avi} />
                                 </div>
                                 <div className="announcementheadandname">
                                     <b>New {selectdata.type} Request</b>
-                                    <p> {selectdata.senderName}</p>
+                                    <p> {`${selectdata.poster.firstName} ${selectdata.poster.lastName}`}</p>
                                     <p>{today.toDateString()}</p>
                                 </div>
                             </div>

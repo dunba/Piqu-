@@ -6,9 +6,8 @@ import Uploadrequest from "./Uploadrequest";
 import Takedownrequest from "./Takedownrequest";
 import Otherrequest from "./Otherrequest";
 import Select from 'react-select'
-import showList from "../dummy data/showList";
 
-const NewRequest = ({ handleNewRequest }) => {
+const NewRequest = ({ handleNewRequest, showList }) => {
   const [isRadioClicked, setIsRadioClicked] = useState(false);
   const [radioOption, setRadioOption] = useState(null)
   const handleRadio = value => {
@@ -62,21 +61,21 @@ const NewRequest = ({ handleNewRequest }) => {
         </div>
         {radioOption === 'Upload' ? (
           <div className="informationsection">
-            <Uploadrequest />
+            <Uploadrequest showList={showList} />
           </div>
         ) : (
           ""
         )}
         {radioOption === 'Takedown' ? (
           <div className="informationsection">
-            <Takedownrequest />
+            <Takedownrequest showList={showList} />
           </div>
         ) : (
           ""
         )}
         {radioOption === 'Other' ? (
           <div className="informationsection">
-            <Otherrequest />
+            <Otherrequest showList={showList} />
           </div>
         ) : (
           ""

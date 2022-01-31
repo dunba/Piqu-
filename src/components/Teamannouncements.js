@@ -1,23 +1,47 @@
-import React from 'react'
-import PushPinIcon from '@mui/icons-material/PushPin';
-import AnnouncementsData from '../dummy data/Announcementsdata';
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import { Link } from 'react-router-dom';
+import { React, useEffect, useState } from "react";
+import db from '../firebase-config'
+import { collection, getDocs } from '@firebase/firestore'
 import '../css/announcements.css'
 import AddIcon from '@mui/icons-material/Add';
-import Modal from 'react-modal'
-import { useState } from 'react';
-import Announcementpopup from './Announcementpopup';
 import IndividualAnnouncement from './IndividualAnnouncement';
-import { Tooltip } from '@mui/material';
+import { Tooltip, StyledBadge, Badge, Popover } from '@mui/material';
+import NewAnnouncement from "./NewAnnouncement";
+import Loading from 'react-loading'
+import { NavLink } from "react-router-dom";
 
 const Teamannouncements = () => {
+
+    const [newAnnouncement, setNewAnnouncement] = useState(false)
+    const handleNewAnnouncement = () => {
+        !newAnnouncement ? setNewAnnouncement(true) : setNewAnnouncement(false)
+    }
+    const [isLoading, setIsLoading] = useState(false)
+
+
+
+
+    const announcementsRef = collection(db, "announcements");
+    const [listofannouncements, setListofAnnouncements] = useState([])
+
+    const fetchAnnouncements = async () => {
+        setIsLoading(true)
+        const data = await getDocs(announcementsRef)
+        setListofAnnouncements(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        setIsLoading(false)
+    }
+
+
+
+    useEffect(() => {
+        fetchAnnouncements()
+
+    }, [])
 
     const [isAnnouncementsExpanded, setIsAnnouncementsExpanded] = useState(false)
     const handleAnnouncementsExpansion = () => {
         if (!isAnnouncementsExpanded) {
             setIsAnnouncementsExpanded(true);
-            setSliceCutoff(AnnouncementsData.length)
+            setSliceCutoff(listofannouncements.length)
         } else {
             setIsAnnouncementsExpanded(false);
             setSliceCutoff(3)
@@ -25,8 +49,9 @@ const Teamannouncements = () => {
     }
 
     const [sliceCutoff, setSliceCutoff] = useState(3)
+    const announcementsinorder = listofannouncements.sort((a, b) => b.time - a.time);
 
-    const sortedAnnouncements = AnnouncementsData.slice(0, sliceCutoff);
+    const sortedAnnouncements = announcementsinorder.slice(0, sliceCutoff);
     return (
         <div className="onairsection">
 
@@ -34,28 +59,38 @@ const Teamannouncements = () => {
             <br />
 
             <div className="listingcontainer" >
-                {
-                    sortedAnnouncements.map(announcement => (
-                        <IndividualAnnouncement announcement={announcement} />
+                {isLoading ? <div className="loadingholder"> <Loading width={'40px'} /> </div> : <div>
+                    {
+                        sortedAnnouncements.map(announcement => (
+                            <IndividualAnnouncement key={announcement.id} announcement={announcement} />
 
-                    ))
+                        ))
 
 
+                    }</div>
                 }
-
 
             </div>
             <div className='announcementsfooter'>
 
-                <div>{!isAnnouncementsExpanded ?
-                    <p onClick={handleAnnouncementsExpansion}> See More...({AnnouncementsData.length - sortedAnnouncements.length})</p>
-                    : <p onClick={handleAnnouncementsExpansion}>See Less</p>}
+                <div>
+
+
+
+                    <NavLink style={{ color: 'inherit' }} to='/announcements'><p id='annfootertext' > ALL ({listofannouncements.length})</p></NavLink>
                 </div>
-                <div className='addannouncement'>
+                <div >
+
+
+
                     <Tooltip title={'New announcement'}>
-                        <AddIcon />
+                        <p id='annfootertext' onClick={handleNewAnnouncement} >NEW</p>
+
                     </Tooltip>
+
                 </div>
+                {newAnnouncement ?
+                    <NewAnnouncement handleNewAnnouncement={handleNewAnnouncement} /> : ''}
             </div>
 
 
