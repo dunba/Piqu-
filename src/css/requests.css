@@ -10,3 +10,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.reqcontainer {
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.reqholder {
+  width: 50%;
+}
