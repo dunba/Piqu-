@@ -6,10 +6,24 @@ import CloseIcon from "@mui/icons-material/Close";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import '../css/requests.css'
 import Loading from 'react-loading'
+import { Tooltip, Modal, Badge, Popover } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 const Requestpopup = ({ match }) => {
     const today = new Date();
     const [selectdata, setSelectdata] = useState(null)
     const requestid = match.params.id
+
+    const handleDelete = async (id) => {
+        if (window.confirm('Are you sure you want to delete this request?')) {
+            const reqDoc = doc(db, "requestsList", id);
+            await deleteDoc(reqDoc)
+            window.location.assign('/');
+        }
+
+
+    }
+
 
 
     ///this section fetches the requestsList from the db
@@ -135,6 +149,17 @@ const Requestpopup = ({ match }) => {
                         <div className="submitdiv">
                             {" "}
                             <button>Take</button>
+                            {selectdata.deletable && (
+                                <Tooltip arrow title={"Delete"}>
+                                    <DeleteIcon
+                                        onClick={() => {
+                                            handleDelete(selectdata.id);
+                                        }}
+                                        style={{ transform: "scale(0.7)" }}
+                                        id="verticon"
+                                    />
+                                </Tooltip>
+                            )}
                         </div>
                     </div>
 
