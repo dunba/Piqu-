@@ -59,7 +59,7 @@ const Requestpopup = ({ match }) => {
                 {selectdata ? (
                     <div>
                         <div className="requestheader">
-                            <b>Request</b>
+                            <b>REQUESTS</b>
                             <div>
                                 <CloseIcon id="closeicon" />
                             </div>
@@ -79,11 +79,25 @@ const Requestpopup = ({ match }) => {
                                 </div>
                             </div>
 
-                            {selectdata.show && (
-                                <b>SHOW
-                                    <p>{selectdata.show}</p>
-                                </b>
+                            {selectdata.category && (
+                                <p>
+                                    <b>Primary Category</b>:{selectdata.category}
 
+                                </p>
+                            )}
+
+
+                            {selectdata.show && (
+                                <p>
+                                    <b>SHOW</b>: {selectdata.show}
+
+                                </p>
+                            )}
+
+                            {selectdata.mos && (
+                                <p>
+                                    <b>MOS:</b> {selectdata.mos}
+                                </p>
                             )}
 
                             {selectdata.url && (
@@ -91,38 +105,42 @@ const Requestpopup = ({ match }) => {
                                     <b id='reqhead'>URL: </b>
                                     <a target='_blank' href={selectdata.url}>{selectdata.url}</a>
                                 </p>
-                            )}
-                            <br />
 
+                            )}
 
                             {selectdata.hed && (
+                                <p>
+                                    <b>Hed:</b> {selectdata.hed}
 
-                                <div>HED
-                                    {selectdata.hed}
-                                </div>
+                                </p>
+                            )}
+
+                            {selectdata.shorthed && (
+
+                                <p>
+                                    <b>Short Hed:</b> {selectdata.shorthed}
+                                </p>
 
 
                             )}
-                            <br />
-
-                            {selectdata.shortHed && (
-
-                                <div>Short Hed:
-                                    {selectdata.shortHed}
-                                </div>
-
-
-                            )}
-                            <br />
                             {selectdata.dek && (
 
-                                <div>Dek:
-                                    {selectdata.dek}
-                                </div>
+                                <p>
+                                    <b>Dek:</b> {selectdata.dek}
+                                </p>
 
 
                             )}
-                            <br />
+
+
+                            {selectdata.deadline && (
+                                <p>
+                                    <b>Deadline</b>
+                                    <br />
+                                    {selectdata.deadline.toDate().toDateString()}
+                                </p>
+
+                            )}
                             {selectdata.attachments && (
                                 <p>
                                     <b>Attachments</b>
@@ -134,15 +152,7 @@ const Requestpopup = ({ match }) => {
                             )}
 
                             <br />
-                            {selectdata.mos ? (
-                                <p>
-                                    <b>MOS</b>
-                                    <br />
-                                    {selectdata.mos}
-                                </p>
-                            ) : (
-                                ""
-                            )}
+
                         </div>
                         <br />
 

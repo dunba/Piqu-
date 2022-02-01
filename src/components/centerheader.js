@@ -33,10 +33,7 @@ const RightSideHeader = () => {
 
       </div>
 
-      <div className="consoleicon">
-        <NotificationsActiveIcon />
 
-      </div>
 
 
 

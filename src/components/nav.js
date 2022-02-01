@@ -14,7 +14,7 @@ const Nav = () => {
       <nav>
         <ul>
           <li><NavLink activeStyle={{ color: 'rgb(216, 216, 255)', textDecoration: "none" }} style={{ color: 'white', textDecoration: 'none' }} to='/' exact><HomeIcon /></NavLink></li>
-          <li><NavLink activeStyle={{ color: 'rgb(216, 216, 255)', textDecoration: "none" }} style={{ color: 'white', textDecoration: 'none' }} to='/rundowns' exact><FeedIcon /></NavLink></li>
+          <li><NavLink activeStyle={{ color: 'rgb(216, 216, 255)', textDecoration: "none" }} style={{ color: 'white', textDecoration: 'none' }} to='/announcements' exact><FeedIcon /></NavLink></li>
           <li><NavLink activeStyle={{ color: 'rgb(216, 216, 255)', textDecoration: "none" }} style={{ color: 'white', textDecoration: 'none' }} to='/messages' exact><GroupIcon /></NavLink></li>
         </ul>
       </nav>

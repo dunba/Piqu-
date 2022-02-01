@@ -46,8 +46,9 @@ const Whosonline = () => {
 
                 ))}
             </div>
+            <p onClick={handleSectionExpansion} id='expandsection'></p>
 
-            <p onClick={handleSectionExpansion} id='expandsection'>{totalonlineusers.length - onlineusers.length} More</p>
+            {/* <p onClick={handleSectionExpansion} id='expandsection'>{totalonlineusers.length - onlineusers.length} More</p> */}
         </div >
     )
 }

@@ -50,7 +50,7 @@ const Announcementpopup = ({ isModalOpen, handleModal, setIsModalOpen, announcem
             <div className="announcementheadandname">
               <b>{announcement.head}</b>
               <p> {announcement.poster.name}</p>
-              <p>{announcement.time.toString()}</p>
+              <p>{announcement.time.toDate().toDateString()}</p>
             </div>
           </div>
           <br />
@@ -61,12 +61,12 @@ const Announcementpopup = ({ isModalOpen, handleModal, setIsModalOpen, announcem
 
         <hr />
         <div>
-          {announcement.deletable && (<div>
+          {/* {announcement.deletable && (<div>
             <DeleteIcon id='editicon' onClick={deleteRequest} />
           </div>)}
           {announcement.editable && (
             <div><EditIcon /></div>
-          )}
+          )} */}
         </div>
 
       </div>

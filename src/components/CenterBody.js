@@ -185,7 +185,7 @@ const CenterBody = () => {
           <div className="spinnerholder"><Loading width={'50px'} color='white' />
           </div> : <div>
             {reqList.map(info => (
-              <RequestPosting
+              <RequestPosting key={info.rqid}
                 handleDelete={handleDelete}
                 info={info}
               />

@@ -1,0 +1,36 @@
+.annylist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+#pfp {
+  width: 3em;
+}
+.cardholder {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
+.openmodal {
+  padding: 1em;
+}
+
+.textpart {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.biggercard {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  width: 90%;
+  border: 1px solid black;
+  margin: 0.3em;
+}
