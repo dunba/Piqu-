@@ -1,7 +1,7 @@
 .annylist {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   margin: auto;
   width: 100%;
 }
@@ -18,19 +18,29 @@
 
 .openmodal {
   padding: 1em;
+  min-width: 100%;
+
+  max-width: 100%;
 }
 
 .textpart {
   display: flex;
   flex-direction: column;
-  margin: 0;
+}
+
+.textpart p {
+  margin: auto;
 }
 .biggercard {
-  justify-content: flex-start;
+  padding: 1em;
   display: flex;
   flex-direction: row;
-  padding: 1em;
-  width: 90%;
-  border: 1px solid black;
-  margin: 0.3em;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  border: solid #bdbdbd 0;
+  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 6px 5px rgba(0, 0, 0, 0.2);
+  margin: 0.1em auto;
+  width: 100%;
 }

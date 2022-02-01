@@ -11,13 +11,15 @@ const Announcements = () => {
 
     const fetchAnnouncements = async () => {
         const data = await getDocs(announcementsRef)
-        setListofAnnouncements(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        const temp = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        let filteredtemp = temp.sort((a, b) => b.time - a.time)
+        setListofAnnouncements(filteredtemp)
         console.log(listofannouncements)
     }
     useEffect(() => {
         fetchAnnouncements()
     }, [])
-    return <div className="announcementcontainer">
+    return <div className="announcementcontainer" >
         <div className="announcementholder">
             Announcements
             {listofannouncements.map(announcement => (

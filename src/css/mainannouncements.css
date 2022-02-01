@@ -3,6 +3,7 @@
   margin: auto;
   justify-content: center;
   width: 100%;
+  overflow-y: scroll;
 }
 
 .announcementholder {

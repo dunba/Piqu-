@@ -3,6 +3,7 @@ import Announcementpopup from './Announcementpopup';
 import { useState } from 'react';
 import '../css/annyholder.css'
 import { Modal } from '@mui/material';
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const AnnHolder = ({ announcement }) => {
     const characterLimit = 35;
@@ -23,15 +24,21 @@ const AnnHolder = ({ announcement }) => {
                     <img id='pfp' src={announcement.poster.avi} />
                 </div>
                 <div className='textpart'>
-                    {announcement.head}
-                    {/* {announcement.poster.name} */}
-                    {/* {announcement.time.toDate().toDateString()} */}
+                    <p>                    {announcement.head}
+                    </p>
+                    <p>                    {announcement.poster.name}
+                    </p>
+
+                    <p>{announcement.time.toDate().toDateString()}</p>
                 </div>
 
             </div >
             <div className='openmodal'>
                 {isModalOpen && (<div handleModal={handleModal} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  >
                     {announcement.body}
+                    <div>
+                        {announcement.deletable && (<DeleteIcon />)}
+                    </div>
                 </div>)}
             </div>
         </div>
